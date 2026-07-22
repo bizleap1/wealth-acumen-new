@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/image copy 3.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,10 +12,10 @@ const Footer = () => {
           
           {/* Column 1: Logo & Registration */}
           <div className="footer-col logo-col">
-            <div className="footer-logo">
-              <span className="logo-w-large">W</span>
-              <span className="logo-text-large">WEALTH ACUMEN</span>
-            </div>
+            <Link to="/" className="footer-logo" style={{ textDecoration: 'none', display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img src={logoImage} alt="Wealth Acumen Logo" style={{ height: '140px', objectFit: 'contain', borderRadius: '4px', marginBottom: '-15px' }} />
+              <span className="logo-text-large" style={{ letterSpacing: '2px', textAlign: 'center' }}>WEALTH ACUMEN</span>
+            </Link>
             <div className="registration-info">
               <p>AMFI REGISTERED MUTUAL FUND DISTRIBUTOR</p>
               <p>AMFI REGISTRATION NO. 247468</p>

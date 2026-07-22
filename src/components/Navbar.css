@@ -1,22 +1,25 @@
-.site-header.transparent-dark {
-  position: fixed;
+.site-header {
   top: 0;
   left: 0;
-  z-index: 9999;
   width: 100%;
+}
+
+.site-header.transparent-dark {
+  background-color: transparent;
 }
 
 .site-header.solid-light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
+  background-color: transparent;
 }
 
-.site-header.absolute-pos {
+.site-header.fixed-home {
+  position: fixed !important;
+  z-index: 5 !important; /* Lower than content-scroll-over */
+}
+
+.site-header.absolute-other {
   position: absolute !important;
-  z-index: 9999 !important;
+  z-index: 9999 !important; /* High enough to be above PageHeader */
 }
 
 /* Main Nav Dark Theme */

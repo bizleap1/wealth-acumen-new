@@ -32,6 +32,33 @@ const Blogs = () => {
       title: 'Jio Financial Q1 Results: Consolidated Profit Skyrockets 155% YoY',
       excerpt: 'Jio Financial Services reported a massive 155% year-on-year growth in its consolidated net profit, reaching Rs 830 crore in the first quarter of the fiscal year.',
       link: '#'
+    },
+    {
+      id: 4,
+      image: '/images/mutual_funds.png',
+      date: 'July 18, 2026',
+      author: 'Wealth Acumen',
+      title: 'Why Diversification is Key to Long-Term Wealth Generation',
+      excerpt: 'Spreading your investments across different asset classes reduces risk and smoothes out returns over time. Here is how to build a resilient portfolio.',
+      link: '#'
+    },
+    {
+      id: 5,
+      image: '/images/bse_building.png',
+      date: 'July 20, 2026',
+      author: 'Wealth Acumen',
+      title: 'Understanding the Basics of Value Investing in the Indian Market',
+      excerpt: 'Value investing involves finding undervalued stocks with strong fundamentals. Learn how to identify these opportunities in today\'s volatile market.',
+      link: '#'
+    },
+    {
+      id: 6,
+      image: '/images/finance_graphic.png',
+      date: 'July 22, 2026',
+      author: 'Wealth Acumen',
+      title: 'The Role of Insurance in Comprehensive Financial Planning',
+      excerpt: 'While building wealth is important, protecting it is crucial. Discover why life and health insurance are foundational to any solid financial plan.',
+      link: '#'
     }
   ];
 

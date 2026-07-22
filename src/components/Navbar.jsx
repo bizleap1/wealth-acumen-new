@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import logoImage from '../assets/logo.png';
+import logoImage from '../assets/image copy 3.png';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const darkHeaderPaths = ['/', '/contact', '/downloads'];
+  
+  const darkHeaderPaths = ['/', '/contact', '/services'];
   const isDarkHeader = darkHeaderPaths.includes(location.pathname);
   const isHome = location.pathname === '/';
 
   const headerClass = isDarkHeader ? 'transparent-dark' : 'solid-light';
   const navClass = isDarkHeader ? 'dark-theme' : 'light-theme';
   const logoClass = isDarkHeader ? 'dark-logo' : 'light-logo';
-  const positionClass = isHome ? '' : 'absolute-pos';
+  const positionClass = isHome ? 'fixed-home' : 'absolute-other';
 
   return (
     <header className={`site-header ${headerClass} ${positionClass}`}>
@@ -40,7 +41,7 @@ const Navbar = () => {
               </div>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#">Services <ChevronDown size={14}/></a>
+              <Link to="/services">Services <ChevronDown size={14}/></Link>
               <div className="dropdown-menu">
                 <Link to="/equity">Equity</Link>
                 <Link to="/mutual-funds">Mutual Funds</Link>
@@ -57,9 +58,8 @@ const Navbar = () => {
               </div>
             </li>
             <li className="nav-item has-dropdown">
-              <a href="#">Downloads <ChevronDown size={14}/></a>
+              <Link to="/downloads">Downloads <ChevronDown size={14}/></Link>
               <div className="dropdown-menu">
-                <Link to="/downloads">KYC/FATCA FORMS</Link>
                 <a href="https://www.amfiindia.com/online-center/download-factsheets" target="_blank" rel="noopener noreferrer">MF FACTSHEET</a>
                 <a href="https://www.amfiindia.com/investor/knowledge-center-info?zoneName=TaxRegimeForMutualFunds" target="_blank" rel="noopener noreferrer">MUTUAL FUND TAXATION</a>
               </div>

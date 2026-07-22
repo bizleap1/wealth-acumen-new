@@ -17,6 +17,7 @@ import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
 import Downloads from './pages/Downloads';
 import EBook from './pages/EBook';
+import Services from './pages/Services';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import './index.css';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/proprietor" element={<Proprietor />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/diy" element={<DIY />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/equity" element={<Equity />} />
           <Route path="/etfs" element={<ETF />} />
           <Route path="/mutual-funds" element={<MutualFunds />} />
@@ -42,6 +44,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/e-book" element={<EBook />} />
+          <Route path="*" element={<div style={{ padding: '100px', textAlign: 'center', fontSize: '2rem' }}>404 - Page Not Found. Current URL doesn't match any routes.</div>} />
         </Routes>
         
         <Footer />
