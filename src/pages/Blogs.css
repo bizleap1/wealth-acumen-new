@@ -1,0 +1,190 @@
+/* Blogs Page Styles */
+.blogs-page {
+  background-color: #ffffff; /* Requested white background */
+  font-family: var(--font-body, sans-serif);
+}
+
+/* Hero Section */
+.blogs-hero {
+  padding: 180px 5% 100px; /* High padding top for transparent navbar */
+  min-height: 500px;
+  background-image: url('/images/laptop-hero-placeholder.png'); /* The user will need to upload their hero image here if it's not contact-hero.png */
+  background-color: #fdfaf6; /* Fallback beige background color from mockup */
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* If the laptop image is not provided, this creates the gradient look from the screenshot */
+.blogs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(253, 250, 246, 0.95) 0%, rgba(253, 250, 246, 0.8) 40%, rgba(253, 250, 246, 0.2) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blogs-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin-left: 5%;
+}
+
+.blogs-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.text-dark {
+  color: #1e293b;
+}
+
+.text-gold {
+  color: #d97706; /* Matches the gold in the mockup */
+}
+
+.blogs-hero-content p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Blogs Grid Section */
+.blogs-content-section {
+  padding: 80px 20px 100px;
+  background-color: #ffffff; /* White background behind cards */
+}
+
+.blogs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.05);
+}
+
+.blog-card-body {
+  padding: 30px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.meta-dot {
+  color: #cbd5e1;
+}
+
+.blog-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 15px;
+  line-height: 1.4;
+}
+
+.blog-card-excerpt {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 25px;
+  flex: 1;
+}
+
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-read-more:hover {
+  color: #d97706;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blogs-hero {
+    padding-top: 140px;
+    background-position: center;
+  }
+  
+  .blogs-hero-content {
+    margin-left: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .blogs-hero-content p {
+    margin: 0 auto;
+  }
+}

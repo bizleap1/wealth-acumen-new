@@ -1,0 +1,373 @@
+/* Mutual Funds Page Styles */
+.mf-page-container {
+  font-family: var(--font-body, sans-serif);
+  background-color: #faf9f6;
+}
+
+/* Dark Hero Section */
+.mf-hero {
+  background-color: #0a0f25;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 140px 10% 40px;
+  gap: 50px;
+}
+
+.mf-hero-content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.breadcrumb-light {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb-light a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.breadcrumb-light span {
+  color: #f1f5f9;
+}
+
+.mf-hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.mf-hero-desc {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.mf-hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.secondary-btn-outline-light {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.secondary-btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.mf-hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.mf-hero-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Smart Investing */
+.mf-smart-investing {
+  padding: 40px 10%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.mf-smart-text {
+  flex: 1.5;
+}
+.mf-smart-text h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+.mf-smart-text p {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.mf-stats-card {
+  flex: 1;
+  background-color: #1e1b4b; /* Dark indigo */
+  color: white;
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.stat-block {
+  padding: 20px 0;
+}
+.stat-block.border-bottom {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.stat-block h3 {
+  font-size: 2.2rem;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+.stat-block span {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.floating-green-circle {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+
+/* Features Grid */
+.mf-features-section {
+  padding: 40px 10%;
+  background-color: #ffffff;
+}
+
+.mf-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mf-feature-card {
+  text-align: left;
+}
+
+.mf-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  background-color: #fef3c7; /* light gold bg */
+  color: #d97706; /* dark gold icon */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mf-feature-card h4 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+.mf-feature-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* Expert Insights */
+.mf-insights-section {
+  padding: 40px 10%;
+  background-color: #f8fafc;
+}
+
+.mf-insights-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mf-insights-quote-card {
+  flex: 1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border-radius: 12px;
+  padding: 40px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.mf-insights-quote-card p {
+  color: white;
+  font-style: italic;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.mf-insights-content {
+  flex: 1;
+}
+
+.subtitle-gold {
+  color: #d97706;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.mf-insights-content h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.mf-insights-content > p {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.insights-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.insights-checklist li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.check-icon {
+  color: #d97706;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.insights-checklist h4 {
+  margin: 0 0 5px;
+  color: #0f172a;
+  font-size: 1rem;
+}
+.insights-checklist p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.explore-link {
+  color: #0f172a;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  border-bottom: 1px solid #0f172a;
+  padding-bottom: 2px;
+  transition: opacity 0.3s;
+}
+.explore-link:hover {
+  opacity: 0.7;
+}
+
+
+/* Bottom CTA */
+.mf-cta-section {
+  padding: 40px 10%;
+  background-color: #0a0f25;
+}
+.mf-cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+.mf-cta-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.mf-cta-container p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.mf-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.secondary-btn-white {
+  background-color: white;
+  color: #0f172a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.secondary-btn-white:hover {
+  background-color: #f1f5f9;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mf-hero {
+    flex-direction: column;
+    padding: 60px 5%;
+  }
+  .mf-hero-content {
+    text-align: center;
+  }
+  .mf-hero-buttons {
+    justify-content: center;
+  }
+  .breadcrumb-light {
+    justify-content: center;
+  }
+  .mf-smart-investing {
+    flex-direction: column;
+  }
+  .mf-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mf-insights-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .mf-features-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,150 @@
+.diy-page {
+  padding: 40px 20px 100px;
+  background-color: #f8fbff;
+  min-height: 80vh;
+  font-family: var(--font-body, sans-serif);
+}
+
+.diy-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.diy-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Column: Scanner */
+.diy-scanner-col {
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.scanner-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.scanner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.scanner-title {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.angel-accent {
+  color: #ff6b00; /* AngelOne orange accent */
+}
+
+.angel-blue {
+  color: #0033a0;
+}
+
+.qr-box {
+  border: 12px solid #111;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Corner borders for scanning effect */
+.qr-box::before, .qr-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #ff6b00;
+  border-style: solid;
+}
+
+.qr-box::before {
+  top: -4px; left: -4px;
+  border-width: 4px 0 0 4px;
+}
+
+.qr-box::after {
+  bottom: -4px; right: -4px;
+  border-width: 0 4px 4px 0;
+}
+
+.scanner-footer {
+  font-size: 0.95rem;
+  color: #4b5563;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* Right Column: Text */
+.diy-text-col {
+  flex: 1;
+}
+
+.diy-title {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 30px;
+}
+
+.diy-text-blocks p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 25px;
+}
+
+.diy-text-blocks p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .diy-content {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 40px;
+  }
+  
+  .diy-scanner-col {
+    flex: auto;
+    width: 100%;
+    order: 2; /* Put scanner below text on mobile */
+  }
+  
+  .diy-text-col {
+    order: 1;
+  }
+  
+  .diy-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+}

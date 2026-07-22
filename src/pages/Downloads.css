@@ -1,0 +1,163 @@
+/* Downloads Page Styles */
+.downloads-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.downloads-hero {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%), url('/images/downloads-hero.png') center/cover;
+  padding: 180px 20px 100px;
+  text-align: center;
+  color: white;
+}
+
+.downloads-hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.downloads-hero p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* New V2 Content Section */
+.downloads-main-v2 {
+  padding: 80px 20px 120px;
+}
+
+.downloads-container-v2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* Section Header */
+.dl-section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dl-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-yellow {
+  background-color: #fef08a; /* Bright pale yellow */
+}
+
+.bg-blue {
+  background-color: #e0f2fe; /* Light sky blue */
+}
+
+.dl-section-header h2 {
+  font-size: 1.8rem;
+  color: #1e3a5f;
+  margin: 0 0 5px;
+  font-weight: 500;
+}
+
+.dl-section-header p {
+  color: #1e293b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Cards Grid */
+.dl-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dl-card-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Horizontal Cards */
+.dl-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px 25px 15px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dl-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-yellow-light {
+  background-color: #fef9c3;
+}
+
+.bg-blue-light {
+  background-color: #f0f9ff;
+}
+
+.dl-card-text {
+  flex: 1;
+}
+
+.dl-card-text h3 {
+  color: #1e293b;
+  font-size: 1.05rem;
+  margin: 0 0 2px;
+  font-weight: 600;
+}
+
+.dl-card-text span {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.dl-action-icon {
+  color: #1e3a5f;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.dl-card:hover .dl-action-icon {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .dl-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dl-card-grid, .dl-card-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+}

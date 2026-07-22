@@ -1,0 +1,237 @@
+.angel-one-section {
+  background-color: #f4f7f9; /* Light, airy blue tint */
+  padding: 60px 20px;
+  font-family: var(--font-body, sans-serif);
+  overflow: hidden;
+}
+
+.angel-one-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.angel-one-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.angel-one-header h2 {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #3b3a5d; /* Dark slate blue */
+  margin-bottom: 20px;
+}
+
+.angel-one-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+.collab-subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #f59e0b; /* Orange accent */
+}
+
+/* Central Layout */
+.angel-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.angel-features-left, .angel-features-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Feature Items */
+.angel-feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature-align-right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.feature-align-left {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.feature-text h3 {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 1.15rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.feature-text p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6a00; /* Angel One Orange */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.angel-feature:hover .feature-icon {
+  transform: translateY(-5px);
+  background-color: #ff6a00;
+  color: #ffffff;
+}
+
+/* Center Circle */
+.angel-center {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.angel-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-clip: padding-box;
+}
+
+/* Orbiting dotted ring */
+.angel-center::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  border-radius: 50%;
+  border: 2px dashed #cbd5e1;
+  animation: spin 40s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* AngelOne Logo Image */
+.angel-logo-img {
+  width: 75%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* Helps blend if image has slight white background */
+}
+
+/* Conclusion */
+.angel-conclusion {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  border-left: 4px solid #ff6a00;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .angel-layout {
+    gap: 20px;
+  }
+  .angel-circle {
+    width: 250px;
+    height: 250px;
+  }
+  .angel-center::before {
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .angel-layout {
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .angel-features-left, .angel-features-right {
+    width: 100%;
+    gap: 40px;
+  }
+  
+  .angel-feature {
+    flex-direction: row !important; /* Force row layout */
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Reset left side to match right side on mobile */
+  .feature-align-right {
+    flex-direction: row-reverse !important;
+  }
+  
+  .angel-circle {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .angel-one-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .angel-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .placeholder-logo .angel-a { font-size: 3rem; }
+  .placeholder-logo .angel-text { font-size: 1.5rem; }
+  
+  .feature-align-right {
+    flex-direction: column-reverse !important;
+    text-align: center !important;
+  }
+  .feature-align-left {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+}

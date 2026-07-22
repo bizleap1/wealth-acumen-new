@@ -1,0 +1,70 @@
+import React from 'react';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import './Footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="site-footer">
+      <div className="footer-container">
+        <div className="footer-grid">
+          
+          {/* Column 1: Logo & Registration */}
+          <div className="footer-col logo-col">
+            <div className="footer-logo">
+              <span className="logo-w-large">W</span>
+              <span className="logo-text-large">WEALTH ACUMEN</span>
+            </div>
+            <div className="registration-info">
+              <p>AMFI REGISTERED MUTUAL FUND DISTRIBUTOR</p>
+              <p>AMFI REGISTRATION NO. 247468</p>
+              <p>EUIN NO. - E459104</p>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="footer-col links-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/downloads">Downloads</Link></li>
+              <li><Link to="/faqs">FAQs</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Our Services */}
+          <div className="footer-col services-col">
+            <h3>Our Services</h3>
+            <ul>
+              <li><Link to="/equity">Equity</Link></li>
+              <li><Link to="/mutual-funds">Mutual Funds</Link></li>
+              <li><Link to="/insurance">Insurance</Link></li>
+              <li><Link to="/etfs">ETFs (Exchange Traded Funds)</Link></li>
+              <li><Link to="/bonds">Bonds</Link></li>
+              <li><Link to="/fixed-deposit">Fixed Deposit</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Us */}
+          <div className="footer-col contact-col">
+            <h3>Contact Us</h3>
+            <div className="contact-details">
+              <p>9325227357</p>
+              <p>info@wealthacumen.in</p>
+              <p>4, Floor Ground, plot-170, Empress Mahal, Dr Babasaheb Ambedkar road, Tilak Rd, Dadar East, Mumbai,<br/>Maharashtra 400014</p>
+            </div>
+            <div className="social-icons-bottom">
+              <a href="#" className="social-circle" aria-label="Instagram"><FaInstagram size={18} /></a>
+              <a href="#" className="social-circle" aria-label="WhatsApp"><FaWhatsapp size={18} /></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

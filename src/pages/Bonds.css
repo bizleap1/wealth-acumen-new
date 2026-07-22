@@ -1,0 +1,494 @@
+/* Bonds Page Styles */
+.bonds-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.bonds-hero {
+  background-color: #ffffff;
+  padding: 140px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #f0ede1;
+}
+
+.bonds-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bonds-hero-text {
+  max-width: 800px;
+  color: #0f172a;
+}
+
+.bonds-overline {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.bonds-overline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  width: 40px;
+  height: 1px;
+  background-color: #475569;
+}
+
+.bonds-overline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  width: 40px;
+  height: 1px;
+  background-color: #475569;
+}
+
+.bonds-hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 0 0 25px 0;
+  color: #0f172a;
+}
+
+.highlight-gold {
+  color: #d4af37;
+}
+
+.bonds-hero-text p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+
+.bonds-hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.secondary-btn-outline {
+  background: transparent;
+  color: #0f172a;
+  border: 1px solid #0f172a;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-btn-outline:hover {
+  background: rgba(15,23,42,0.05);
+  border-color: #0f172a;
+}
+
+.bonds-hero-image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.bonds-hero-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 4px solid white;
+}
+
+.yield-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: #fbbf24;
+  color: #0f172a;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 4px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.yield-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.yield-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Stable Returns Section */
+.bonds-stable-section {
+  padding: 100px 20px;
+  background-color: #f8fafc;
+  position: relative;
+}
+
+.bonds-stable-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.bonds-grid-left {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.bond-type-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.bond-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.bond-icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bond-icon-circle.blue {
+  background-color: #eff6ff;
+}
+
+.bond-icon-circle.gold {
+  background-color: #fef3c7;
+}
+
+.bond-type-card h4 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.bond-type-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.bonds-text-right {
+  flex: 1;
+}
+
+.bonds-text-right h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 30px;
+}
+
+.bonds-text-right .lead-text {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.bonds-text-right p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.bonds-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bonds-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.whatsapp-floating-bubble {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.whatsapp-floating-bubble img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+}
+
+/* Features Section */
+.bonds-features-section {
+  padding: 80px 20px 100px;
+  background-color: #ffffff;
+}
+
+.bonds-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.bonds-section-header h2 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin: 0 0 15px;
+}
+
+.bonds-section-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.bonds-features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.bonds-feature-wide {
+  grid-column: span 2;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.bf-wide-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bf-wide-content h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0 0 15px;
+}
+
+.bf-wide-content p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.bf-link {
+  color: #b45309;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bf-wide-image {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+}
+
+.bf-wide-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.bonds-feature-card {
+  padding: 40px 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bonds-feature-card.dark-bg {
+  background-color: #0f172a;
+  color: white;
+}
+
+.bonds-feature-card.dark-bg h3 {
+  color: white;
+}
+
+.bonds-feature-card.dark-bg p {
+  color: #cbd5e1;
+}
+
+.bonds-feature-card.orange-bg {
+  background-color: #fde68a;
+  color: #0f172a;
+}
+
+.bonds-feature-card.light-bg {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.bf-icon {
+  margin-bottom: 20px;
+}
+
+.bonds-feature-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 15px;
+  color: #0f172a;
+}
+
+.bonds-feature-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.bf-footer-text {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #e2e8f0;
+}
+
+/* Bottom CTA */
+.bonds-cta-section {
+  padding: 60px 20px 120px;
+  background-color: #f8fafc;
+}
+
+.bonds-cta-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #0f172a;
+  border-radius: 16px;
+  padding: 60px;
+  text-align: center;
+  background-image: radial-gradient(circle at 100% 0%, rgba(251, 191, 36, 0.1) 0%, transparent 40%);
+}
+
+.bonds-cta-box h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin: 0 0 15px;
+}
+
+.bonds-cta-box p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin: 0 0 40px;
+}
+
+.bonds-cta-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.secondary-btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-btn-outline-white:hover {
+  background: white;
+  color: #0f172a;
+}
+
+@media (max-width: 992px) {
+  .bonds-hero-content, .bonds-stable-container {
+    flex-direction: column;
+  }
+  .bonds-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bonds-feature-wide {
+    grid-column: span 2;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .bonds-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .bonds-feature-wide {
+    grid-column: span 1;
+  }
+  .bonds-grid-left {
+    grid-template-columns: 1fr;
+  }
+  .whatsapp-floating-bubble {
+    display: none;
+  }
+}

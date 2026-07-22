@@ -1,0 +1,235 @@
+.site-header.transparent-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.site-header.solid-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Main Nav Dark Theme */
+.main-nav.dark-theme {
+  background-color: transparent;
+  padding: 25px 0;
+  box-shadow: none;
+}
+
+/* Main Nav Light Theme */
+.main-nav.light-theme {
+  background-color: transparent;
+  padding: 25px 0;
+  box-shadow: none;
+}
+
+.nav-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Dark Logo */
+.logo-icon.dark-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+}
+
+.logo-text.dark-logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+/* Light Logo */
+.logo-icon.light-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f59e0b; /* Orange/Gold */
+  line-height: 1;
+}
+
+.logo-text.light-logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #111827; /* Dark slate */
+  text-transform: capitalize;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Nav links - Dark Theme */
+.main-nav.dark-theme .nav-item a {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.main-nav.dark-theme .nav-item.active a, 
+.main-nav.dark-theme .nav-item a:hover {
+  color: #ffffff;
+}
+
+/* Nav links - Light Theme */
+.main-nav.light-theme .nav-item a {
+  color: #4b5563; /* Slate grey */
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.main-nav.light-theme .nav-item.active a, 
+.main-nav.light-theme .nav-item a:hover {
+  color: #111827;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-login {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .main-nav.dark-theme .nav-menu.active a {
+    color: #1f2937; /* Force dark text on white dropdown for dark header */
+  }
+
+  .main-nav.dark-theme .nav-menu.active .nav-item.active a {
+    color: #4f46e5;
+  }
+
+  .nav-item.has-dropdown {
+    width: 100%;
+  }
+
+  /* Make dropdowns static in mobile so they push content down instead of overlapping */
+  .nav-item.has-dropdown:hover .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-left: 2px solid #e2e8f0;
+    padding: 10px 0 10px 15px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: flex;
+  }
+}
+
+/* Dropdown Menu Styling */
+.nav-item.has-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  border-left: 4px solid #4f46e5; /* The thick indigo border */
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #64748b !important; /* Grey text */
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: #0f172a !important; /* Darker on hover */
+  background-color: #f8fafc;
+}
