@@ -6,19 +6,28 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const darkHeaderPaths = ['/', '/contact', '/services'];
-  const isDarkHeader = darkHeaderPaths.includes(location.pathname);
+  const isDarkHeader = darkHeaderPaths.includes(location.pathname) && !scrolled;
   const isHome = location.pathname === '/';
 
   const headerClass = isDarkHeader ? 'transparent-dark' : 'solid-light';
   const navClass = isDarkHeader ? 'dark-theme' : 'light-theme';
   const logoClass = isDarkHeader ? 'dark-logo' : 'light-logo';
-  const positionClass = isHome ? 'fixed-home' : 'absolute-other';
+  const positionClass = 'fixed-header';
 
   return (
-    <header className={`site-header ${headerClass} ${positionClass}`}>
+    <header className={`site-header ${headerClass} ${positionClass} ${scrolled ? 'scrolled' : ''}`}>
       <nav className={`main-nav ${navClass}`}>
         <div className="nav-container">
           <Link to="/" className="logo-container" style={{ textDecoration: 'none' }}>

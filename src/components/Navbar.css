@@ -2,6 +2,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.transparent-dark {
@@ -20,6 +21,16 @@
 .site-header.absolute-other {
   position: absolute !important;
   z-index: 9999 !important; /* High enough to be above PageHeader */
+}
+
+.site-header.fixed-header {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+.site-header.scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Main Nav Dark Theme */
