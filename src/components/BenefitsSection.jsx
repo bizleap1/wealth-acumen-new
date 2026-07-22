@@ -47,7 +47,6 @@ const BenefitsSection = () => {
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-
   return (
     <section className="benefits-section">
       <div className="benefits-container">

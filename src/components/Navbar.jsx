@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import logoImage from '../assets/logo.png';
@@ -9,13 +9,15 @@ const Navbar = () => {
   const location = useLocation();
   const darkHeaderPaths = ['/', '/contact', '/downloads'];
   const isDarkHeader = darkHeaderPaths.includes(location.pathname);
-  
+  const isHome = location.pathname === '/';
+
   const headerClass = isDarkHeader ? 'transparent-dark' : 'solid-light';
   const navClass = isDarkHeader ? 'dark-theme' : 'light-theme';
   const logoClass = isDarkHeader ? 'dark-logo' : 'light-logo';
+  const positionClass = isHome ? '' : 'absolute-pos';
 
   return (
-    <header className={`site-header ${headerClass}`}>
+    <header className={`site-header ${headerClass} ${positionClass}`}>
       <nav className={`main-nav ${navClass}`}>
         <div className="nav-container">
           <Link to="/" className="logo-container" style={{ textDecoration: 'none' }}>

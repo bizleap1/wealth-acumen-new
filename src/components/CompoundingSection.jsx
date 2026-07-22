@@ -133,25 +133,23 @@ const CompoundingSection = () => {
                     <stop offset="100%" stopColor="rgba(59, 130, 246, 1)" />
                   </linearGradient>
                 </defs>
-                {mounted && (
                   <motion.path 
                     className="arrow-path"
                     d="M 10 230 Q 250 200, 480 30"
                     initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
                   />
-                )}
                 {/* Arrowhead */}
-                {mounted && (
                   <motion.polygon 
                     points="465,25 485,25 480,45" 
                     className="arrow-head"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ delay: 2, duration: 0.3 }}
                   />
-                )}
               </svg>
 
             </div>
