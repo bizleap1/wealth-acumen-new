@@ -347,5 +347,49 @@
 @media (max-width: 768px) {
   .intro-container {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .intro-left-column {
+    position: relative;
+    top: 0;
+  }
+  .modern-photo-wrapper {
+    height: auto;
+    padding-bottom: 10px;
+  }
+  .modern-photo-container {
+    height: 380px;
+  }
+  .modern-photo-border {
+    height: 380px;
+  }
+  .floating-card-top {
+    top: -10px;
+    left: 0px;
+    width: 240px;
+    padding: 15px;
+    transform: scale(0.9);
+  }
+  .floating-card-bottom {
+    position: relative;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin: -60px auto 0;
+    width: 92%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 25px 15px;
+  }
+  .intro-right-column {
+    padding-left: 0;
+    margin-top: 0;
+  }
+  .premium-card {
+    position: relative;
+    top: 0;
+    min-height: auto;
+    padding: 10px 0 30px;
   }
 }

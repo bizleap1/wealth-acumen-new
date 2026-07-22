@@ -41,6 +41,18 @@ const GoogleIcon = () => (
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setItemsPerView(1);
+      else if (window.innerWidth < 992) setItemsPerView(2);
+      else setItemsPerView(3);
+    };
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
@@ -75,7 +87,7 @@ const TestimonialsSection = () => {
         <div className="testimonials-slider-wrapper">
           <motion.div 
             className="testimonials-slider-3col"
-            animate={{ x: `-${currentIndex * (window.innerWidth < 768 ? 100 : window.innerWidth < 992 ? 50 : 33.333)}%` }}
+            animate={{ x: `calc(-${currentIndex * (100 / itemsPerView)}% - ${currentIndex * (30 / itemsPerView)}px)` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {/* Duplicating the array so the slider doesn't look empty when scrolling near the end */}
