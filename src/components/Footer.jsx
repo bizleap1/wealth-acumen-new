@@ -12,9 +12,9 @@ const Footer = () => {
           
           {/* Column 1: Logo & Registration */}
           <div className="footer-col logo-col">
-            <Link to="/" className="footer-logo" style={{ textDecoration: 'none', display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img src={logoImage} alt="Wealth Acumen Logo" style={{ height: '140px', objectFit: 'contain', borderRadius: '4px', marginBottom: '-15px' }} />
-              <span className="logo-text-large" style={{ letterSpacing: '2px', textAlign: 'center' }}>WEALTH ACUMEN</span>
+            <Link to="/" className="footer-logo" style={{ textDecoration: 'none', display: 'inline-flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <img src={logoImage} alt="Wealth Acumen Logo" style={{ height: '140px', objectFit: 'contain', borderRadius: '4px', marginBottom: '-15px', marginLeft: '-20px' }} />
+              <span className="logo-text-large" style={{ letterSpacing: '2px', textAlign: 'left' }}>WEALTH ACUMEN</span>
             </Link>
             <div className="registration-info">
               <p>AMFI REGISTERED MUTUAL FUND DISTRIBUTOR</p>
