@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Sparkles, ArrowRight, Activity, DollarSign, ArrowUpRight, ArrowDownRight, User } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   
   // Real-time Mouse Parallax Animations
@@ -69,8 +71,8 @@ const Hero = () => {
           </p>
           
           <div className="hero-actions-center">
-            <button className="btn-get-started">Get Started <ArrowRight size={16}/></button>
-            <button className="btn-try-demo">Try Demo</button>
+            <button className="btn-get-started" onClick={() => navigate('/services')}>Get Started <ArrowRight size={16}/></button>
+            <button className="btn-try-demo" onClick={() => navigate('/contact')}>Contact Us</button>
           </div>
         </motion.div>
 

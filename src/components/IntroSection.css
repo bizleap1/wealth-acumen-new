@@ -345,6 +345,9 @@
 }
 
 @media (max-width: 768px) {
+  .intro-section {
+    padding: 60px 20px;
+  }
   .intro-container {
     grid-template-columns: 1fr;
     gap: 40px;

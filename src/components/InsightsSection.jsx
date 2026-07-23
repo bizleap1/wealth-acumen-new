@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './InsightsSection.css';
 
 const InsightsSection = () => {
+  const navigate = useNavigate();
   const [insights, setInsights] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -50,7 +52,7 @@ const InsightsSection = () => {
             <h2>Market Intelligence & Insights</h2>
             <p>Stay ahead with the latest trends and deep-dive analysis from our research desk.</p>
           </div>
-          <button className="btn-view-all">View All Insights</button>
+          <button className="btn-view-all" onClick={() => navigate('/resources')}>View All Insights</button>
         </div>
 
         {loading ? (

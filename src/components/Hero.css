@@ -411,3 +411,36 @@
   .hero-title-elegant { font-size: 3rem; }
   .float-card { display: none; /* Hide floating cards on mobile to keep clean */ }
 }
+
+@media (max-width: 768px) {
+  .hero-container.dark-glow-theme {
+    padding-top: 120px;
+  }
+  .hero-title-elegant {
+    font-size: 2.2rem;
+    padding: 0 10px;
+  }
+  .hero-subtitle-elegant {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  .hero-actions-center {
+    flex-direction: column;
+    padding: 0 30px;
+    gap: 10px;
+  }
+  .btn-get-started, .btn-try-demo {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-visuals {
+    min-height: 380px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .mobile-mockup {
+    position: relative;
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}

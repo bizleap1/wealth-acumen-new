@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TrendingUp, Shield, ArrowRight, BarChart2, Coins } from 'lucide-react';
 import './CompoundingSection.css';
@@ -21,6 +22,7 @@ const yAxisLabels = [55, 50, 45, 40, 35, 30, 25, 20, 15, 10, 5, 0];
 const MAX_VALUE = 55;
 
 const CompoundingSection = () => {
+  const navigate = useNavigate();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -77,7 +79,7 @@ const CompoundingSection = () => {
             </div>
           </div>
 
-          <button className="contact-btn">
+          <button className="contact-btn" onClick={() => navigate('/contact')}>
             <div className="btn-icon">
               <TrendingUp size={16} />
             </div>

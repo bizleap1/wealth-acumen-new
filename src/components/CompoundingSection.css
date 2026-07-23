@@ -341,40 +341,51 @@
 @media (max-width: 1024px) {
   .compounding-container {
     flex-direction: column;
+    gap: 40px;
   }
   .compounding-content {
     max-width: 100%;
   }
   .floating-badge {
     right: 20px;
-    top: -20px;
+    top: -30px;
   }
 }
 
 @media (max-width: 768px) {
+  .compounding-section {
+    padding: 60px 20px;
+  }
   .compounding-title {
     font-size: 2.2rem;
   }
   .chart-card {
-    padding: 20px;
+    padding: 20px 10px;
+    overflow-x: auto;
   }
   .chart-area {
-    height: 200px;
+    height: 220px;
+    min-width: 500px;
+    padding-bottom: 30px;
   }
   .chart-bars::before {
-    background-size: 100% 18.18px; /* 200px / 11 */
+    background-size: 100% 19.99px; /* 220px / 11 */
   }
-  .bar-group {
-    width: 20px;
+  .bar-group-line {
+    width: 25px;
   }
-  .bar-value {
-    font-size: 0.6rem;
-  }
-  .x-axis-label {
-    font-size: 0.6rem;
-    bottom: -20px;
+  .value-label, .year-label {
+    font-size: 0.65rem;
   }
   .arrow-overlay {
     display: none; /* Hide complex arrow on small screens */
+  }
+  .floating-badge {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 20px auto 0;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   }
 }

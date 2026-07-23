@@ -283,6 +283,9 @@
 }
 
 @media (max-width: 768px) {
+  .services-section-elegant {
+    padding: 60px 20px;
+  }
   .services-grid-elegant {
     grid-template-columns: 1fr;
   }

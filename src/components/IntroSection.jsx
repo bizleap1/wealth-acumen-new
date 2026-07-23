@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import chooseUsImg from '../assets/choose us .png';
 import './IntroSection.css';
 
 const IntroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="intro-section">
       <div className="intro-container">
@@ -115,7 +118,7 @@ const IntroSection = () => {
                 </p>
               </div>
               
-              <button className="btn-know-more">
+              <button className="btn-know-more" onClick={() => navigate('/about')}>
                 Learn More About Us
                 <ArrowRight size={18} className="btn-arrow" />
               </button>

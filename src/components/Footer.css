@@ -8,6 +8,12 @@
   border-top: 1px solid #1e293b;
 }
 
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 20px;
+  }
+}
+
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -34,10 +40,16 @@
 }
 
 .footer-logo {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 30px;
+}
+
+.footer-logo-img {
+  height: 140px;
+  margin-bottom: -15px;
+  margin-left: -20px;
 }
 
 .logo-w-large {
@@ -55,6 +67,7 @@
   letter-spacing: 1px;
   margin-top: 5px;
   margin-left: 2px;
+  text-align: left;
 }
 
 .registration-info p {
@@ -128,13 +141,32 @@
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
   .logo-col, .footer-logo {
     align-items: center;
     text-align: center;
   }
+  .footer-logo-img {
+    margin-left: 0;
+  }
+  .logo-text-large {
+    text-align: center;
+    margin-left: 0;
+  }
   .registration-info p {
     text-align: center;
+  }
+  .footer-col h3 {
+    text-align: center;
+  }
+  .footer-col ul li {
+    text-align: center;
+  }
+  .contact-details p {
+    text-align: center;
+  }
+  .social-icons-bottom {
+    justify-content: center;
   }
 }

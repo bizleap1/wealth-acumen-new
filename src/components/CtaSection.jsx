@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star, User, Activity } from 'lucide-react';
 import './CtaSection.css';
 
 const CtaSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="cta-section">
       <motion.div 
@@ -13,10 +15,10 @@ const CtaSection = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <button className="btn-get-started">
+        <button className="btn-get-started" onClick={() => navigate('/services')}>
           Get Started <ArrowRight size={18} />
         </button>
-        <button className="btn-try-demo">
+        <button className="btn-try-demo" onClick={() => navigate('/contact')}>
           Try Demo
         </button>
       </motion.div>
