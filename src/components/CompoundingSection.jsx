@@ -108,8 +108,9 @@ const CompoundingSection = () => {
               </div>
             </div>
 
-            <div className="chart-area">
-              <div className="y-axis">
+            <div className="chart-scroll-wrapper">
+              <div className="chart-area">
+                <div className="y-axis">
                 {yAxisLabels.map(label => (
                   <span key={label}>{label}</span>
                 ))}
@@ -154,6 +155,7 @@ const CompoundingSection = () => {
                   />
               </svg>
 
+              </div>
             </div>
 
             {/* Floating Badge */}

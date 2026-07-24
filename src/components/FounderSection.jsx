@@ -81,7 +81,7 @@ const FounderSection = () => {
                 <div className="info-icon"><Phone size={18} /></div>
                 <div className="info-content">
                   <h5>Phone</h5>
-                  <p>9325227357</p>
+                  <p>+91 9325227357</p>
                 </div>
               </div>
 

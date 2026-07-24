@@ -52,7 +52,7 @@ const InsightsSection = () => {
             <h2>Market Intelligence & Insights</h2>
             <p>Stay ahead with the latest trends and deep-dive analysis from our research desk.</p>
           </div>
-          <button className="btn-view-all" onClick={() => navigate('/resources')}>View All Insights</button>
+          <button className="btn-view-all" onClick={() => navigate('/blogs')}>View All Insights</button>
         </div>
 
         {loading ? (

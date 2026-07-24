@@ -1,14 +1,10 @@
 import React from 'react';
 import { QrCode } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import './DIY.css';
 
 const DIY = () => {
   return (
-    <>
-      <Navbar />
-      <div className="diy-page">
+    <div className="diy-page">
         <div className="diy-container">
           <div className="diy-content">
             
@@ -43,8 +39,6 @@ const DIY = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
   );
 };
 

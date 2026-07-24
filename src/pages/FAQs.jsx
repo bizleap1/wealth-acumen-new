@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { PlusCircle, MinusCircle } from 'lucide-react';
 import './FAQs.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const faqData = [
   {
@@ -51,8 +49,6 @@ const FAQs = () => {
   };
 
   return (
-    <>
-      <Navbar />
       <div className="faqs-page">
         <div className="faqs-container">
           <h1 className="faqs-title">Frequently Asked Questions</h1>
@@ -81,8 +77,6 @@ const FAQs = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
   );
 };
 
