@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, FileText, Target, Building2, Landmark, Banknote, ShieldCheck, LineChart, Calendar } from 'lucide-react';
 import './Bonds.css';
 
 const Bonds = () => {
+  const navigate = useNavigate();
   return (
     <div className="bonds-page">
       {/* Hero Section */}
@@ -14,11 +16,8 @@ const Bonds = () => {
               For conservative investors seeking stability, we offer expert guidance on government, corporate, and Bharat bonds. Achieve a balanced risk-return profile through strategic fixed-income positioning.
             </p>
             <div className="bonds-hero-actions">
-              <button className="primary-btn-gold">
+              <button className="primary-btn-gold" onClick={() => navigate('/contact')}>
                 Schedule Consultation <ArrowRight size={16} style={{marginLeft: '8px'}}/>
-              </button>
-              <button className="secondary-btn-outline">
-                View Yield Rates
               </button>
             </div>
           </div>
@@ -124,8 +123,7 @@ const Bonds = () => {
           <h2>Ready to Stabilize Your Portfolio?</h2>
           <p>Our bond experts are ready to design a custom fixed-income<br/>strategy that protects your wealth and yields consistent returns.</p>
           <div className="bonds-cta-actions">
-            <button className="primary-btn-gold">Book a Strategy Call</button>
-            <button className="secondary-btn-outline-white">Download Bond Brochure</button>
+            <button className="primary-btn-gold" onClick={() => navigate('/contact')}>Book a Strategy Call</button>
           </div>
         </div>
       </section>

@@ -2,14 +2,14 @@ import React from 'react';
 import './AmcPartnersSection.css';
 
 const amcLogos = [
-  { id: 1, name: 'HDFC Mutual Fund' },
-  { id: 2, name: 'Kotak Mutual Fund' },
-  { id: 3, name: 'SBI Mutual Fund' },
-  { id: 4, name: 'Groww Mutual Fund' },
-  { id: 5, name: 'Angel One' },
-  { id: 6, name: 'PPFAS Mutual Fund' },
-  { id: 7, name: 'Canara Robeco' },
-  { id: 8, name: 'DSP Mutual Fund' },
+  { id: 1, name: 'HDFC Mutual Fund', imgUrl: 'https://logo.clearbit.com/hdfcfund.com' },
+  { id: 2, name: 'Kotak Mutual Fund', imgUrl: 'https://logo.clearbit.com/kotakmf.com' },
+  { id: 3, name: 'SBI Mutual Fund', imgUrl: 'https://logo.clearbit.com/sbimf.com' },
+  { id: 4, name: 'Groww Mutual Fund', imgUrl: 'https://logo.clearbit.com/groww.in' },
+  { id: 5, name: 'Angel One', imgUrl: 'https://logo.clearbit.com/angelone.in' },
+  { id: 6, name: 'PPFAS Mutual Fund', imgUrl: 'https://logo.clearbit.com/amc.ppfas.com' },
+  { id: 7, name: 'Canara Robeco', imgUrl: 'https://logo.clearbit.com/canararobeco.com' },
+  { id: 8, name: 'DSP Mutual Fund', imgUrl: 'https://logo.clearbit.com/dspim.com' },
 ];
 
 const AmcPartnersSection = () => {
@@ -23,7 +23,16 @@ const AmcPartnersSection = () => {
             {/* Double the array for infinite scrolling effect */}
             {[...amcLogos, ...amcLogos].map((logo, index) => (
               <div key={`${logo.id}-${index}`} className="amc-logo-card">
-                <span className="amc-name">{logo.name}</span>
+                <img 
+                  src={logo.imgUrl} 
+                  alt={logo.name} 
+                  className="amc-logo-img" 
+                  onError={(e) => { 
+                    e.target.style.display = 'none'; 
+                    e.target.nextSibling.style.display = 'block'; 
+                  }} 
+                />
+                <span className="amc-name" style={{ display: 'none' }}>{logo.name}</span>
               </div>
             ))}
           </div>

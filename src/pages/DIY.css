@@ -1,5 +1,5 @@
 .diy-page {
-  padding: 40px 20px 100px;
+  padding: 140px 20px 100px;
   background-color: #f8fbff;
   min-height: 80vh;
   font-family: var(--font-body, sans-serif);
@@ -37,6 +37,7 @@
   align-items: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+  margin-top: 40px;
 }
 
 .scanner-card:hover {

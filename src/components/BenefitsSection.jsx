@@ -42,7 +42,7 @@ const BenefitsSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: timelineRef,
-    offset: ["start 80%", "end 80%"]
+    offset: ["start center", "end center"]
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);

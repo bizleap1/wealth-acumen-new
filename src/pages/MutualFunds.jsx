@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FileText, Layers, RefreshCcw, ShieldCheck, TrendingUp, Compass, CheckCircle2 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import './MutualFunds.css';
@@ -8,6 +8,8 @@ const MutualFunds = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className="mf-page-container">
@@ -26,9 +28,9 @@ const MutualFunds = () => {
               <p className="hero-desc">
                 We help you navigate the complexities of wealth creation through disciplined, goal-based strategies, offering diversified exposure to different asset classes with the convenience of professional fund management.
               </p>
-              <a href="#" className="btn-orange">
+              <Link to="/contact" className="btn-orange">
                 Start Investing <TrendingUp size={18} />
-              </a>
+              </Link>
             </div>
             <div className="hero-image-wrapper">
               <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop" alt="Mutual Funds" className="hero-image" />
@@ -163,9 +165,6 @@ const MutualFunds = () => {
               </li>
             </ul>
             
-            <a href="#" className="explore-link">
-              Explore Detailed Performance Metrics &rarr;
-            </a>
           </div>
         </div>
       </section>
@@ -178,10 +177,10 @@ const MutualFunds = () => {
             Join thousands of investors who trust Wealth Acumen for their mutual fund investments. Expert advice is just a click away.
           </p>
           <div className="mf-cta-buttons">
-            <button className="primary-btn-gold">
+            <button className="primary-btn-gold" onClick={() => navigate('/contact')}>
               Invest Now
             </button>
-            <button className="secondary-btn-white">
+            <button className="secondary-btn-white" onClick={() => window.open('https://wa.me/919325227357', '_blank')}>
               Contact Advisor
             </button>
           </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Shield, ArrowRight, HeartPulse, FileHeart, Grid, Phone, CheckCircle2, UserCheck, Star, Activity, Briefcase } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import './Insurance.css';
@@ -8,6 +8,8 @@ const Insurance = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className="insurance-page-container">
@@ -26,9 +28,9 @@ const Insurance = () => {
               <p className="hero-desc">
                 Protecting your wealth is as important as growing it. Our tailored insurance strategies ensure that you and your loved ones are covered against life's uncertainties.
               </p>
-              <a href="#" className="btn-orange">
+              <Link to="/contact" className="btn-orange">
                 Get a Free Quote <ArrowRight size={18} />
-              </a>
+              </Link>
             </div>
             <div className="hero-image-wrapper">
               <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family reviewing insurance plans" className="hero-image" />
@@ -162,7 +164,7 @@ const Insurance = () => {
           </p>
           
           <div className="ins-cta-bottom">
-            <button className="primary-btn-gold">
+            <button className="primary-btn-gold" onClick={() => navigate('/contact')}>
               <Phone size={18} /> Schedule Consultation
             </button>
             <span className="cta-quote">

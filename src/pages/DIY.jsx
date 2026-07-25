@@ -1,5 +1,5 @@
 import React from 'react';
-import { QrCode } from 'lucide-react';
+import { QrCode } from 'lucide-react'; // kept in case it's used elsewhere, otherwise we can remove it
 import './DIY.css';
 
 const DIY = () => {
@@ -15,7 +15,7 @@ const DIY = () => {
                   <span className="angel-accent">Angel</span><span className="angel-blue">One</span>
                 </h3>
                 <div className="qr-box">
-                  <QrCode size={140} strokeWidth={1.5} color="#111" />
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://play.google.com/store/apps/details?id=com.msf.angelmobile" alt="Angel One App QR Code" width={140} height={140} style={{ display: 'block' }} />
                 </div>
                 <p className="scanner-footer">Scan here to open Demat Account</p>
               </div>

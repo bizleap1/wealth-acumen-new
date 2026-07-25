@@ -5,8 +5,26 @@ import './Contact.css';
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
   
   const isFirstPartFilled = name.trim() !== '' && email.trim() !== '';
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name || !email || !subject || !message) {
+      alert("Please fill out all fields before sending.");
+      return;
+    }
+    const mailSubject = `Contact Form: ${subject}`;
+    const mailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    window.location.href = `mailto:info@wealthacumen.in?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    alert("Thank you! Your email client will now open so you can send your message.");
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  };
 
   return (
     <div className="contact-page">
@@ -30,28 +48,28 @@ const Contact = () => {
                 <div className="info-icon"><MapPin size={24} color="#d4af37" /></div>
                 <div>
                   <h4>Our Office</h4>
-                  <p>123 Financial District,<br/>Mumbai, Maharashtra 400001, India</p>
+                  <p>Ground Floor, Empress Mahal, Plot No. 170, near Dadar TT Circle,<br/>Dadar East, Mumbai, Maharashtra 400014</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon"><Phone size={24} color="#d4af37" /></div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+91 98765 43210<br/>+91 11 2345 6789</p>
+                  <p><a href="https://wa.me/919325227357" style={{color: 'inherit', textDecoration: 'none'}}>+91 9325227357</a></p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon"><Mail size={24} color="#d4af37" /></div>
                 <div>
                   <h4>Email</h4>
-                  <p>contact@wealthacumen.in<br/>support@wealthacumen.in</p>
+                  <p>info@wealthacumen.in</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon"><Clock size={24} color="#d4af37" /></div>
                 <div>
                   <h4>Business Hours</h4>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM<br/>Saturday & Sunday: Closed</p>
+                  <p>Mon - Fri: 10:00 AM - 6:00 PM<br/>Saturday & Sunday: Closed</p>
                 </div>
               </div>
             </div>
@@ -59,7 +77,7 @@ const Contact = () => {
           
           <div className="contact-form-wrapper">
             <h2>Send us a Message</h2>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-col">
                   <div className="form-group">
@@ -75,11 +93,11 @@ const Contact = () => {
                 <div className={`form-col ${!isFirstPartFilled ? 'col-disabled' : ''}`}>
                   <div className="form-group">
                     <label>Subject</label>
-                    <input type="text" placeholder="How can we help?" disabled={!isFirstPartFilled} required />
+                    <input type="text" placeholder="How can we help?" value={subject} onChange={(e) => setSubject(e.target.value)} disabled={!isFirstPartFilled} required />
                   </div>
                   <div className="form-group">
                     <label>Message</label>
-                    <textarea rows="4" placeholder="Write your message here..." disabled={!isFirstPartFilled} required></textarea>
+                    <textarea rows="4" placeholder="Write your message here..." value={message} onChange={(e) => setMessage(e.target.value)} disabled={!isFirstPartFilled} required></textarea>
                   </div>
                 </div>
               </div>

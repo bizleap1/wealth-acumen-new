@@ -25,7 +25,7 @@ const ContactSection = () => {
             <div className="stats-card-dark">
               <div className="stat-item">
                 <Users size={24} color="#f59e0b" />
-                <h4>10K+</h4>
+                <h4>200+</h4>
                 <p>Happy Clients</p>
               </div>
               <div className="stat-item">
@@ -35,7 +35,7 @@ const ContactSection = () => {
               </div>
               <div className="stat-item">
                 <Star size={24} color="#f59e0b" />
-                <h4>15+</h4>
+                <h4>5+</h4>
                 <p>Years of Trust</p>
               </div>
             </div>
@@ -126,13 +126,24 @@ const ContactSection = () => {
             <div className="office-card-glass">
               <div className="map-pin-badge"><MapPin size={24} color="#f59e0b" /></div>
               <h4>Visit Our Office</h4>
-              <p>4th Floor Ground, Plot-170, Empress Mahal, Dr. Babasaheb Ambedkar Road, Tilak Rd, Dadar East, Mumbai, Maharashtra 400014</p>
+              <p>Ground Floor, Empress Mahal, Plot No. 170, near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014</p>
               <div className="office-actions">
-                <div className="action-btn-glass">
+                <div className="action-btn-glass" style={{cursor: 'pointer'}} onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: 'Wealth Acumen Office Location',
+                      text: 'Ground Floor, Empress Mahal, Plot No. 170, near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014',
+                      url: 'https://www.google.com/maps/place/Empress+Mahal,+Plot+No.+170,+Dadar+East,+Mumbai,+Maharashtra+400014'
+                    }).catch(console.error);
+                  } else {
+                    navigator.clipboard.writeText('Ground Floor, Empress Mahal, Plot No. 170, near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014');
+                    alert('Address copied to clipboard!');
+                  }
+                }}>
                   <Share2 size={16} />
                   <span>Share Location</span>
                 </div>
-                <div className="action-btn-glass">
+                <div className="action-btn-glass" style={{cursor: 'pointer'}} onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Empress+Mahal,+Plot+No.+170,+Dadar+East,+Mumbai,+Maharashtra+400014', '_blank')}>
                   <Send size={16} />
                   <span>Get Directions</span>
                 </div>
@@ -148,14 +159,14 @@ const ContactSection = () => {
             <div className="banner-icon"><Mail size={24} color="#f59e0b" /></div>
             <div className="banner-text">
               <h5>Prefer email?</h5>
-              <p>Write to us at <span className="highlight-gold-text">support@wealthacumen.com</span></p>
+              <p>Write to us at <span className="highlight-gold-text">info@wealthacumen.in</span></p>
             </div>
           </div>
           <div className="banner-item">
             <div className="banner-icon"><Phone size={24} color="#f59e0b" /></div>
             <div className="banner-text">
               <h5>Call us</h5>
-              <p className="highlight-gold-text">+91 98765 43210</p>
+              <p className="highlight-gold-text">+91 9325227357</p>
             </div>
           </div>
         </motion.div>

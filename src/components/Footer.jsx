@@ -52,12 +52,12 @@ const Footer = () => {
           <div className="footer-col contact-col">
             <h3>Contact Us</h3>
             <div className="contact-details">
-              <p>+91 9325227357</p>
+              <p><a href="https://wa.me/919325227357" style={{color: 'inherit', textDecoration: 'none'}}>+91 9325227357</a></p>
               <p>info@wealthacumen.in</p>
-              <p>4, Floor Ground, plot-170, Empress Mahal, Dr Babasaheb Ambedkar road, Tilak Rd, Dadar East, Mumbai,<br/>Maharashtra 400014</p>
+              <p>Ground Floor, Empress Mahal, Plot No. 170,<br/>near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014</p>
             </div>
             <div className="social-icons-bottom">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram"><FaInstagram size={18} /></a>
+              <a href="https://www.instagram.com/wealthacumen31?igsh=MWIzcHpzbWt4ZDByMQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram"><FaInstagram size={18} /></a>
               <a href="https://wa.me/919325227357" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="WhatsApp"><FaWhatsapp size={18} /></a>
             </div>
           </div>

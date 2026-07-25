@@ -100,7 +100,7 @@ const AboutInfoSection = () => {
                   <div className="stat-icon-wrapper icon-blue">
                     <Users size={20} />
                   </div>
-                  <h4>500+</h4>
+                  <h4>200+</h4>
                   <span className="stat-label">Happy Clients</span>
                   <span className="stat-sub">Trust us with their future</span>
                 </div>
@@ -109,7 +109,7 @@ const AboutInfoSection = () => {
                   <div className="stat-icon-wrapper icon-gold">
                     <BarChart size={20} />
                   </div>
-                  <h4>12+</h4>
+                  <h4>5+</h4>
                   <span className="stat-label">Years of Experience</span>
                   <span className="stat-sub">Delivering expert financial solutions</span>
                 </div>

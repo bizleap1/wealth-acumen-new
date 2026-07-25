@@ -3,9 +3,9 @@ import { motion, useInView } from 'framer-motion';
 import './StatsSection.css';
 
 const stats = [
-  { prefix: "", num: 15, suffix: "K+", label: "Happy & Satisfied Clients" },
+  { prefix: "", num: 200, suffix: "+", label: "Happy & Satisfied Clients" },
   { prefix: "", num: 50, suffix: "+", label: "Financial Experts" },
-  { prefix: "", num: 10, suffix: "+", label: "Years of Experience" },
+  { prefix: "", num: 5, suffix: "+", label: "Years of Experience" },
   { prefix: "₹", num: 500, suffix: "Cr+", label: "Assets Under Management" }
 ];
 

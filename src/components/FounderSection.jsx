@@ -47,7 +47,7 @@ const FounderSection = () => {
               <p>
                 AMFI-Registered Mutual Fund Distributor with additional certifications
                 in Equity Derivatives and NISM-Certified Research Analyst.
-                With over 4 years of hands-on experience in the stock market. As a
+                With over 5 years of hands-on experience in the stock market. As a
                 Channel Partner of Angel One, I provide clients with access to a wide
                 range of investment products and trading platforms.
               </p>
@@ -73,7 +73,7 @@ const FounderSection = () => {
                 <div className="info-icon"><Calendar size={18} /></div>
                 <div className="info-content">
                   <h5>Experience</h5>
-                  <p>4 Years</p>
+                  <p>5 Years</p>
                 </div>
               </div>
 
@@ -81,7 +81,7 @@ const FounderSection = () => {
                 <div className="info-icon"><Phone size={18} /></div>
                 <div className="info-content">
                   <h5>Phone</h5>
-                  <p>+91 9325227357</p>
+                  <p><a href="https://wa.me/919325227357" style={{color: 'inherit', textDecoration: 'none'}}>+91 9325227357</a></p>
                 </div>
               </div>
 
@@ -89,7 +89,7 @@ const FounderSection = () => {
                 <div className="info-icon"><Mail size={18} /></div>
                 <div className="info-content">
                   <h5>Mail</h5>
-                  <p>wealthacumen31@gmail.com</p>
+                  <p>info@wealthacumen.in</p>
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ const FounderSection = () => {
                 <div className="info-icon"><MapPin size={18} /></div>
                 <div className="info-content">
                   <h5>Based In</h5>
-                  <p>Mumbai, Maharashtra</p>
+                  <p>Ground Floor, Empress Mahal, Plot No. 170, near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014</p>
                 </div>
               </div>
             </div>

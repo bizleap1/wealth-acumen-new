@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Briefcase, RefreshCw, Layers, DollarSign, ShieldCheck, Phone } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import './Equity.css';
@@ -22,9 +23,9 @@ const Equity = () => {
               <p className="hero-desc">
                 We assist you in your equity investment journey by helping you access tools, research insights, and educational content. Whether you are just starting out or already investing, we're here to support your growth.
               </p>
-              <a href="#" className="btn-orange">
+              <Link to="/contact" className="btn-orange">
                 Get Started <ArrowRight size={18} />
-              </a>
+              </Link>
             </div>
             <div className="hero-image-wrapper">
               <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop" alt="Equity trading" className="hero-image" />
@@ -128,7 +129,6 @@ const Equity = () => {
             <div className="long-term-card">
               <h3>Ideal for Long-Term Wealth</h3>
               <p>Perfect for investors seeking wealth creation over a 5-10 year horizon through the power of compounding.</p>
-              <div className="long-term-bg-icon">BSE</div>
             </div>
           </div>
         </div>
@@ -142,12 +142,9 @@ const Equity = () => {
             <p>Our experts are ready to help you build a portfolio that stands the test of time.</p>
             
             <div className="cta-actions">
-              <a href="#" className="btn-dark">
+              <Link to="/contact" className="btn-dark">
                 Contact an Expert <Phone size={18} />
-              </a>
-              <a href="#" className="btn-outline">
-                View Research Insights
-              </a>
+              </Link>
             </div>
           </div>
         </div>

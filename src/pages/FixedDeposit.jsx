@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, RefreshCw, Calendar, ShieldCheck } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import './FixedDeposit.css';
 
 const FixedDeposit = () => {
+  const navigate = useNavigate();
   return (
     <div className="fd-page">
       {/* Hero Section */}
@@ -94,8 +96,8 @@ const FixedDeposit = () => {
             <h2>Ready to Lock in Your Prosperity?</h2>
             <p>Join thousands of investors who trust Wealth Acumen for their secure growth. Start your Fixed Deposit journey today and watch your wealth grow with confidence.</p>
             <div className="fd-cta-actions">
-              <button className="primary-btn-gold">Invest Now</button>
-              <button className="secondary-btn-outline-white">Talk to an Expert</button>
+              <button className="primary-btn-gold" onClick={() => navigate('/contact')}>Invest Now</button>
+              <button className="secondary-btn-outline-white" onClick={() => window.open('https://wa.me/919325227357', '_blank')}>Talk to an Expert</button>
             </div>
           </div>
           <div className="fd-cta-icon-wrapper">
