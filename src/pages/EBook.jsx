@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { BookOpen, BarChart2, ShieldCheck, FileCheck, Download, Book, User, Mail, Phone, Lock, Shield } from 'lucide-react';
 import './EBook.css';
-
+import insuranceEbookPdf from '../assets/INSURANCE EBOOK.pdf';
+import technicalEbookPdf from '../assets/TECHNICAL ANALYSIS.pdf';
+import fundamentalEbookPdf from '../assets/FUNDAMENTAL ANALYSIS.pdf';
+import mutualFundEbookPdf from '../assets/MUTUAL FUND EBOOK.pdf';
+import fixedIncomeEbookPdf from '../assets/FIXED INCOME.pdf';
+import stockMarketBtsEbookPdf from '../assets/STOCK MARKET BEHIND THE SCENE.pdf';
 const EBook = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,10 +22,44 @@ const EBook = () => {
       alert("Please fill out all fields.");
       return;
     }
-    const subject = `E-Book Request: ${ebook}`;
-    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nRequested E-Book: ${ebook}`;
-    window.location.href = `mailto:info@wealthacumen.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    alert("Thank you! Your email client will now open to send the request.");
+
+    // Logic to download the selected E-Book
+    let pdfUrl = '';
+    let fileName = '';
+
+    if (ebook === 'Insurance E-Book') {
+      pdfUrl = insuranceEbookPdf;
+      fileName = 'Insurance_EBook.pdf';
+    } else if (ebook === 'Technical Analysis For Beginners') {
+      pdfUrl = technicalEbookPdf;
+      fileName = 'Technical_Analysis.pdf';
+    } else if (ebook === 'Fundamental Analysis For Beginners') {
+      pdfUrl = fundamentalEbookPdf;
+      fileName = 'Fundamental_Analysis.pdf';
+    } else if (ebook === 'Mutual Fund') {
+      pdfUrl = mutualFundEbookPdf;
+      fileName = 'Mutual_Fund_EBook.pdf';
+    } else if (ebook === 'Fixed Income E-Book') {
+      pdfUrl = fixedIncomeEbookPdf;
+      fileName = 'Fixed_Income.pdf';
+    } else if (ebook === 'Stock Market BTS E-book') {
+      pdfUrl = stockMarketBtsEbookPdf;
+      fileName = 'Stock_Market_Behind_The_Scene.pdf';
+    } else {
+      // For now, if other ebooks aren't uploaded, we can show an alert
+      alert(`The ${ebook} PDF is not uploaded yet. Please add it to assets and update the code.`);
+      return;
+    }
+
+    // Create a temporary link element to trigger the download
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    alert("Thank you! Your E-Book download will start shortly.");
     setFormData({ name: '', email: '', phone: '', ebook: '' });
   };
 
@@ -96,18 +135,18 @@ const EBook = () => {
                   <BookOpen size={18} color="#64748b" className="input-icon" />
                   <select value={formData.ebook} onChange={(e) => setFormData({...formData, ebook: e.target.value})}>
                     <option value="" disabled>Select E-Book</option>
-                    <option value="Technical Analysis For Beginners">Technical Analysis For Beginners</option>
-                    <option value="Fundamental Analysis For Beginners">Fundamental Analysis For Beginners</option>
-                    <option value="Mutual Fund">Mutual Fund</option>
+                    <option value="Technical Analysis For Beginners">Technical Analysis</option>
+                    <option value="Fundamental Analysis For Beginners">Fundamental Analysis</option>
+                    <option value="Mutual Fund">Mutual Fund E-Book</option>
                     <option value="Insurance E-Book">Insurance E-Book</option>
-                    <option value="Fixed Income E-Book">Fixed Income E-Book</option>
+                    <option value="Fixed Income E-Book">Fixed Income</option>
                     <option value="Stock Market BTS E-book">Stock Market BTS E-book</option>
                   </select>
                 </div>
               </div>
               
               <button type="submit" className="download-btn">
-                SUBMIT
+                Download
               </button>
               
               <div className="trust-markers">
