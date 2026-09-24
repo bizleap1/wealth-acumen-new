@@ -4,9 +4,9 @@ import './StatsSection.css';
 
 const stats = [
   { prefix: "", num: 200, suffix: "+", label: "Happy & Satisfied Clients" },
-  { prefix: "", num: 50, suffix: "+", label: "Financial Experts" },
+  { prefix: "", num: 10, suffix: "+", label: "Investment Solution" },
   { prefix: "", num: 5, suffix: "+", label: "Years of Experience" },
-  { prefix: "₹", num: 500, suffix: "Cr+", label: "Assets Under Management" }
+  { prefix: "", num: 10, suffix: "+", label: "Learning Resources" }
 ];
 
 const AnimatedCounter = ({ prefix, num, suffix }) => {

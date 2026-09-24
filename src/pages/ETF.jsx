@@ -49,10 +49,7 @@ const ETF = () => {
           <p>
             From <strong>equity-based ETFs</strong> that mirror indices like Nifty or Sensex, to <strong>debt ETFs</strong>, <strong>gold ETFs</strong>, and <strong>Bharat Bond ETFs</strong>, we guide you in building a portfolio that's transparent, cost-effective, and easy to manage.
           </p>
-          <div className="amfi-badge">
-            <CheckCircle2 size={20} color="#d4af37" />
-            <span>AMFI Registered Mutual Fund Distributor</span>
-          </div>
+
         </div>
       </section>
 

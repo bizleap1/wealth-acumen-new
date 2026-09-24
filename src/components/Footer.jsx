@@ -16,11 +16,7 @@ const Footer = () => {
               <img src={logoImage} alt="Wealth Acumen Logo" className="footer-logo-img" style={{ objectFit: 'contain', borderRadius: '4px' }} />
               <span className="logo-text-large" style={{ letterSpacing: '2px' }}>WEALTH ACUMEN</span>
             </Link>
-            <div className="registration-info">
-              <p>AMFI REGISTERED MUTUAL FUND DISTRIBUTOR</p>
-              <p>AMFI REGISTRATION NO. 247468</p>
-              <p>EUIN NO. - E459104</p>
-            </div>
+
           </div>
 
           {/* Column 2: Quick Links */}
@@ -45,6 +41,7 @@ const Footer = () => {
               <li><Link to="/etfs">ETFs (Exchange Traded Funds)</Link></li>
               <li><Link to="/bonds">Bonds</Link></li>
               <li><Link to="/fixed-deposit">Fixed Deposit</Link></li>
+              <li><Link to="/sif">SIF</Link></li>
             </ul>
           </div>
 

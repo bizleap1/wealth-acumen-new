@@ -56,10 +56,7 @@ const MutualFunds = () => {
             <h3>15.4%</h3>
             <span>AVG. ANNUALIZED RETURN (10Y PERIOD)</span>
           </div>
-          <div className="stat-block">
-            <h3>10k+</h3>
-            <span>ACTIVE PORTFOLIOS MANAGED</span>
-          </div>
+
           
           {/* Floating Green Circle */}
           <div className="floating-green-circle">

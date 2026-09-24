@@ -89,6 +89,45 @@ const Blogs = () => {
         'Insurance should never be mixed with investment. Unit Linked Insurance Plans (ULIPs) or endowment policies often offer subpar returns and inadequate cover. The best approach is to buy pure term insurance and invest the rest of your money in mutual funds.'
       ],
       link: '#'
+    },
+    {
+      id: 7,
+      image: '/images/advisor_consultation.jpg',
+      date: 'September 24, 2026',
+      author: 'Wealth Acumen',
+      title: 'Why Every Investor Needs a Advisor',
+      excerpt: 'Today, we have access to more financial information than ever before. This is a great advantage, but it can also create a new problem: too much information can lead to confusion.',
+      content: [
+        'Today, we have access to more financial information than ever before. The internet, social media, news platforms, and various financial apps make it easy for anyone to research investments and make their own decisions.',
+        'This is a great advantage, but it can also create a new problem: too much information can lead to confusion.',
+        'A retail investor may come across several opinions about the same investment. One person may recommend a particular mutual fund, another may suggest stocks, while someone else may recommend a completely different strategy. Since most of this information may appear genuine and convincing, investors often try to follow everything at once.',
+        'Eventually, they may become confused, change their strategy frequently, or get stuck between different investment decisions.',
+        'Investing Requires Discipline',
+        'Investing and trading may look complicated, but many of the basic principles are simple. The real challenge is following them with discipline and consistency.',
+        'Many investors start by using their own knowledge and following information available online. There is nothing wrong with learning and doing your own research. However, making financial decisions without a proper plan can sometimes lead to unnecessary mistakes and losses.',
+        'This is where a financial advisor can add value.',
+        'Think of an Advisor Like a Doctor for Your Wealth',
+        'When you have a health problem, you may first try a simple home remedy. But if the problem continues or becomes complicated, you consult a doctor.',
+        'The same approach is often seen in investing.',
+        'Many people first try to manage their investments on their own. They watch videos, read articles, follow market opinions, and make decisions based on what they find. When things don’t go as expected, they then look for professional guidance.',
+        'But why wait until after a mistake has been made?',
+        'Just as you consult a doctor to understand your health before a problem becomes serious, seeking professional financial guidance at the right time can help you make more informed investment decisions.',
+        'Is Financial Advice Expensive?',
+        'One common misconception is that consulting a financial professional is always expensive.',
+        'In reality, the cost of getting guidance should be considered in relation to the potential cost of making uninformed financial decisions. A wrong investment decision, lack of diversification, inappropriate risk-taking, or constantly changing your strategy can potentially have a much greater financial impact over time.',
+        'Successful business owners and professionals often rely on different experts—such as tax advisors, legal advisors, financial professionals, and other specialists—to make better-informed decisions.',
+        'Retail investors can also benefit from professional guidance.',
+        'At Wealth Acumen, our objective is to help investors understand their investment options, assess their needs, and make decisions with greater clarity and discipline. In many cases, initial guidance and consultations may be available without any consultation charges, making it easier for investors to seek help before making important decisions.',
+        'Don’t Let Information Become Confusion',
+        'Having access to information is valuable. But information alone is not the same as understanding.',
+        'The real benefit comes from knowing which information is relevant to you, understanding the risks involved, and following a structured investment approach.',
+        'You don’t have to navigate the entire investment journey alone.',
+        'The right guidance at the right time can help you replace confusion with clarity and random decisions with a disciplined approach.',
+        'Your wealth deserves the same attention that you give to your health. Don’t wait for a financial mistake to happen before seeking guidance. Start with clarity, plan with discipline, and invest with awareness.',
+        'Wealth Acumen — Helping You Make Sense of Your Investment Journey.',
+        'Disclaimer: This article is for educational and awareness purposes only and should not be considered investment advice. Mutual fund investments are subject to market risks. Please consider your investment objectives, risk profile, and financial situation before making investment decisions.'
+      ],
+      link: '#'
     }
   ];
 
@@ -107,7 +146,7 @@ const Blogs = () => {
       <section className="blogs-content-section">
         <div className="blogs-container">
           <div className="blogs-grid">
-            {blogsData.map((blog, index) => (
+            {[...blogsData].reverse().map((blog, index) => (
               <motion.div 
                 key={blog.id} 
                 className="blog-card"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, ShieldCheck, Briefcase, PieChart, ArrowRight, Umbrella, LineChart, Scroll, Landmark, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TrendingUp, ShieldCheck, Briefcase, PieChart, ArrowRight, Umbrella, LineChart, Scroll, Landmark, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import './ServicesSection.css';
 
 const services = [
@@ -43,6 +43,11 @@ const services = [
     title: "Fixed Deposit",
     description: "Guaranteed returns with zero market risk, offering a safe haven for your hard-earned savings.",
     icon: Landmark
+  },
+  {
+    title: "SIF",
+    description: "Specialized Investment Fund offering advanced investment strategies for experienced investors.",
+    icon: Award
   }
 ];
 

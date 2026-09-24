@@ -12,10 +12,6 @@ const faqData = [
     answer: "Yes, we work with SEBI-registered professionals and platforms to ensure all our services comply with regulatory standards."
   },
   {
-    question: "Do you provide stock recommendations?",
-    answer: "Yes, as an authorized partner, we provide research-backed guidance and access to top-tier stock recommendations through our platform."
-  },
-  {
     question: "What services do you offer?",
     answer: "We offer Mutual Funds, Equity trading, ETFs, Bonds, Insurance, and Fixed Deposits. We also provide learning resources to help you invest better."
   },

@@ -13,6 +13,7 @@ import MutualFunds from './pages/MutualFunds';
 import Insurance from './pages/Insurance';
 import Bonds from './pages/Bonds';
 import FixedDeposit from './pages/FixedDeposit';
+import SIF from './pages/SIF';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
 import Downloads from './pages/Downloads';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/bonds" element={<Bonds />} />
           <Route path="/fixed-deposit" element={<FixedDeposit />} />
+          <Route path="/sif" element={<SIF />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/downloads" element={<Downloads />} />

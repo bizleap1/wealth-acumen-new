@@ -66,6 +66,7 @@ const Navbar = () => {
                 <Link to="/etfs">ETFs (Exchange Traded Funds)</Link>
                 <Link to="/bonds">Bonds</Link>
                 <Link to="/fixed-deposit">Fixed Deposit</Link>
+                <Link to="/sif">SIF</Link>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'learning' ? 'open' : ''}`}>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TrendingUp, PieChart, Umbrella, LineChart, Scroll, Landmark } from 'lucide-react';
+import { TrendingUp, PieChart, Umbrella, LineChart, Scroll, Landmark, Award } from 'lucide-react';
 import './Services.css';
 
 const servicesList = [
@@ -40,6 +40,12 @@ const servicesList = [
     path: "/fixed-deposit",
     description: "Guaranteed returns with zero market risk, offering a safe haven for your hard-earned savings.",
     icon: Landmark
+  },
+  {
+    title: "SIF",
+    path: "/sif",
+    description: "Specialized Investment Fund offering advanced investment strategies for experienced investors.",
+    icon: Award
   }
 ];
 
