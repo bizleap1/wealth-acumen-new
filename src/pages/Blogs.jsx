@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight, X, Share2, Check, Link as LinkIcon } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import './Blogs.css';
 
@@ -131,7 +133,46 @@ const Blogs = () => {
     }
   ];
 
+  const location = useLocation();
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const [showShareMenu, setShowShareMenu] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const blogId = params.get('blog');
+    if (blogId) {
+      const blog = blogsData.find(b => b.id === parseInt(blogId, 10));
+      if (blog) {
+        setSelectedBlog(blog);
+      }
+    }
+  }, [location.search]);
+
+  const getShareUrl = (id) => {
+    // WhatsApp doesn't always hyperlink 'localhost', so we swap it to '127.0.0.1' for local testing
+    const origin = window.location.origin.replace('localhost', '127.0.0.1');
+    return `${origin}/blogs?blog=${id}`;
+  };
+
+  const handleCopyLink = (e, id) => {
+    e.stopPropagation();
+    const url = getShareUrl(id);
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+      setShowShareMenu(false);
+    }, 2000);
+  };
+
+  const handleWhatsAppShare = (e, blog) => {
+    e.stopPropagation();
+    const url = getShareUrl(blog.id);
+    const text = `Check out this blog: ${blog.title} \n\n${url}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    setShowShareMenu(false);
+  };
 
   return (
     <div className="blogs-page">
@@ -166,7 +207,10 @@ const Blogs = () => {
                   </div>
                   <h3 className="blog-card-title">{blog.title}</h3>
                   <p className="blog-card-excerpt">{blog.excerpt}</p>
-                  <button onClick={() => setSelectedBlog(blog)} className="blog-read-more" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <button onClick={() => {
+                    setSelectedBlog(blog);
+                    window.history.pushState({}, '', `/blogs?blog=${blog.id}`);
+                  }} className="blog-read-more" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', display: 'flex', alignItems: 'center', gap: '5px' }}>
                     Read more <ArrowRight size={16} />
                   </button>
                 </div>
@@ -184,7 +228,10 @@ const Blogs = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedBlog(null)}
+            onClick={() => {
+              setSelectedBlog(null);
+              window.history.pushState({}, '', '/blogs');
+            }}
             style={{
               position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', 
               backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 10000, 
@@ -203,8 +250,53 @@ const Blogs = () => {
                 maxHeight: '80vh', overflowY: 'auto'
               }}
             >
+              <div style={{ position: 'absolute', top: '15px', right: '50px' }}>
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowShareMenu(!showShareMenu);
+                  }}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', display: 'flex', alignItems: 'center', gap: '5px' }}
+                  title="Share options"
+                >
+                  <Share2 size={20} />
+                </button>
+                {showShareMenu && (
+                  <div style={{
+                    position: 'absolute', top: '100%', right: '0', marginTop: '10px',
+                    backgroundColor: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    padding: '8px 0', minWidth: '150px', zIndex: 10
+                  }}>
+                    <button 
+                      onClick={(e) => handleWhatsAppShare(e, selectedBlog)}
+                      style={{ 
+                        width: '100%', display: 'flex', alignItems: 'center', gap: '10px',
+                        padding: '10px 15px', background: 'none', border: 'none', cursor: 'pointer',
+                        color: '#128C7E', fontSize: '14px', textAlign: 'left'
+                      }}
+                    >
+                      <FaWhatsapp size={18} /> WhatsApp
+                    </button>
+                    <button 
+                      onClick={(e) => handleCopyLink(e, selectedBlog.id)}
+                      style={{ 
+                        width: '100%', display: 'flex', alignItems: 'center', gap: '10px',
+                        padding: '10px 15px', background: 'none', border: 'none', cursor: 'pointer',
+                        color: copied ? '#10b981' : '#475569', fontSize: '14px', textAlign: 'left'
+                      }}
+                    >
+                      {copied ? <Check size={18} /> : <LinkIcon size={18} />} 
+                      {copied ? 'Copied!' : 'Copy Link'}
+                    </button>
+                  </div>
+                )}
+              </div>
               <button 
-                onClick={() => setSelectedBlog(null)}
+                onClick={() => {
+                  setSelectedBlog(null);
+                  window.history.pushState({}, '', '/blogs');
+                }}
                 style={{ position: 'absolute', top: '15px', right: '15px', background: 'none', border: 'none', cursor: 'pointer', color: '#64748b' }}
               >
                 <X size={24} />
