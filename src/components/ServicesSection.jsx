@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TrendingUp, ShieldCheck, Briefcase, PieChart, ArrowRight, Umbrella, LineChart, Scroll, Landmark, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import './ServicesSection.css';
@@ -6,46 +7,55 @@ import './ServicesSection.css';
 const services = [
   {
     title: "Mutual Funds",
+    path: "/mutual-funds",
     description: "Expertly curated mutual fund portfolios to match your risk profile and return expectations.",
     icon: PieChart
   },
   {
-    title: "Portfolio Management",
+    title: "Portfolio Management (PMS)",
+    path: "/pms",
     description: "Personalized management of your investments to maximize returns while mitigating risks.",
     icon: Briefcase
   },
   {
     title: "Retirement Planning",
+    path: "/contact",
     description: "Secure your future with our comprehensive and stress-free retirement planning strategies.",
     icon: ShieldCheck
   },
   {
     title: "Wealth Creation",
+    path: "/equity",
     description: "Long-term strategies designed to exponentially grow your wealth and achieve financial freedom.",
     icon: TrendingUp
   },
   {
     title: "Insurance",
+    path: "/insurance",
     description: "Comprehensive insurance coverage tailored to protect you and your loved ones from life's uncertainties.",
     icon: Umbrella
   },
   {
     title: "ETFs (Exchange Traded Funds)",
+    path: "/etfs",
     description: "Diversify your portfolio with low-cost, flexible, and tax-efficient Exchange Traded Funds.",
     icon: LineChart
   },
   {
     title: "Bonds",
+    path: "/bonds",
     description: "Stable and secure fixed-income investments to provide a reliable stream of returns over time.",
     icon: Scroll
   },
   {
     title: "Fixed Deposit",
+    path: "/fixed-deposit",
     description: "Guaranteed returns with zero market risk, offering a safe haven for your hard-earned savings.",
     icon: Landmark
   },
   {
     title: "SIF",
+    path: "/sif",
     description: "Specialized Investment Fund offering advanced investment strategies for experienced investors.",
     icon: Award
   }
@@ -126,7 +136,7 @@ const ServicesSection = () => {
                   {/* Information is now always visible */}
                   <div className="card-info-content">
                     <p className="card-desc" style={{ marginBottom: '25px', marginTop: '15px' }}>{service.description}</p>
-                    <a href="#" className="card-link">Learn More &rarr;</a>
+                    <Link to={service.path || '/services'} className="card-link">Learn More &rarr;</Link>
                   </div>
                   
                 </motion.div>

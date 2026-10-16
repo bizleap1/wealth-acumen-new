@@ -18,6 +18,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
+  };
+
   const toggleDropdown = (e, name) => {
     if (window.innerWidth <= 992) {
       e.preventDefault();
@@ -60,13 +65,14 @@ const Navbar = () => {
             <li className={`nav-item has-dropdown ${openDropdown === 'services' ? 'open' : ''}`}>
               <Link to="/services" onClick={(e) => toggleDropdown(e, 'services')}>Services <span className="dropdown-icon"><ChevronDown size={14}/></span></Link>
               <div className="dropdown-menu">
-                <Link to="/equity">Equity</Link>
-                <Link to="/mutual-funds">Mutual Funds</Link>
-                <Link to="/insurance">Insurance</Link>
-                <Link to="/etfs">ETFs (Exchange Traded Funds)</Link>
-                <Link to="/bonds">Bonds</Link>
-                <Link to="/fixed-deposit">Fixed Deposit</Link>
-                <Link to="/sif">SIF</Link>
+                <Link to="/equity" onClick={closeMenu}>Equity</Link>
+                <Link to="/mutual-funds" onClick={closeMenu}>Mutual Funds</Link>
+                <Link to="/insurance" onClick={closeMenu}>Insurance</Link>
+                <Link to="/etfs" onClick={closeMenu}>ETFs (Exchange Traded Funds)</Link>
+                <Link to="/bonds" onClick={closeMenu}>Bonds</Link>
+                <Link to="/fixed-deposit" onClick={closeMenu}>Fixed Deposit</Link>
+                <Link to="/sif" onClick={closeMenu}>SIF</Link>
+                <Link to="/pms" onClick={closeMenu}>PMS (Portfolio Management Service)</Link>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'learning' ? 'open' : ''}`}>

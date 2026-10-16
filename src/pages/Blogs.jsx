@@ -302,6 +302,130 @@ const Blogs = () => {
         }
       ],
       link: '#'
+    },
+    {
+      id: 9,
+      category: 'Portfolio Management Services',
+      image: '/images/pms_blog.jpg',
+      date: 'October 16, 2026',
+      readTime: '6 min read',
+      author: 'Wealth Acumen',
+      title: 'Portfolio Management Services (PMS): How Wealthy Investors Manage Their Money',
+      excerpt: 'Have you ever wondered how wealthy investors manage their money differently from regular mutual fund investors? Explore PMS, the ₹50 lakh threshold, strategy types, and key risks.',
+      content: [
+        { type: 'paragraph', text: 'Have you ever wondered how wealthy investors manage their money differently from regular mutual fund investors? One option they may consider is **Portfolio Management Services (PMS)**.' },
+        { type: 'paragraph', text: 'PMS is designed for investors who want their investments to be managed professionally with a more personalised approach. However, it is important to understand how it works, how much money is required, and what risks are involved before investing.' },
+
+        { type: 'heading', text: 'What is PMS?' },
+        { type: 'paragraph', text: '**PMS stands for Portfolio Management Services.** In simple words, it is a service where a professional portfolio manager manages your investments on your behalf.' },
+        { type: 'paragraph', text: 'Depending on the investment strategy, your money may be invested in shares, bonds, and other permitted securities. The manager makes investment decisions based on the strategy followed and your investment objectives.' },
+        { type: 'paragraph', text: "Unlike a mutual fund, where many investors invest in a common pool of money, a PMS generally maintains a separate portfolio for each client. The securities are held in the client's account, subject to the arrangement and type of PMS." },
+        { type: 'paragraph', text: 'The main idea behind PMS is to provide a more personalised way of managing investments.' },
+
+        { type: 'heading', text: 'How does PMS work?' },
+        { type: 'paragraph', text: 'Suppose you invest ₹50 lakh in a PMS:' },
+        {
+          type: 'list',
+          items: [
+            'You choose a PMS provider and investment strategy after understanding its approach and risks.',
+            'The portfolio manager invests your money according to that strategy.',
+            'Shares or other securities are held in your designated account.',
+            'The manager makes investment decisions, including buying or selling securities, according to the agreed mandate.',
+            'Your portfolio value changes depending on market movements and investment performance.'
+          ]
+        },
+        { type: 'paragraph', text: 'Remember, the portfolio manager manages the investments, but the profits are not guaranteed. Your portfolio can also lose value.' },
+
+        { type: 'heading', text: 'What is the minimum investment required for PMS?' },
+        { type: 'paragraph', text: 'In India, the minimum investment required for PMS is generally **₹50 lakh per client**, as prescribed by SEBI. This amount can be invested in cash or eligible securities, subject to the applicable rules.' },
+        { type: 'paragraph', text: 'Because of this high minimum amount, PMS is usually considered by investors who have a substantial amount of money available for investment.' },
+
+        { type: 'heading', text: 'What is the difference between PMS and mutual funds?' },
+        { type: 'paragraph', text: 'Both PMS and mutual funds offer professional investment management, but there are some important differences.' },
+        {
+          type: 'table',
+          headers: ['Feature', 'Mutual Funds', 'PMS'],
+          rows: [
+            ['Minimum investment', 'Often starts with a small amount', 'Generally ₹50 lakh'],
+            ['How money is managed', 'Money from many investors is pooled together', 'Each client generally has a separate portfolio'],
+            ['Personalisation', "Follows the scheme's investment objective", 'Can offer a more personalised approach'],
+            ['Portfolio ownership', 'Investor owns mutual fund units', 'Investor generally owns the underlying securities'],
+            ['Charges', 'Scheme-related expenses', 'Fees and other charges as agreed with the provider'],
+            ['Risk', 'Depends on the scheme', 'Depends on the strategy and investments']
+          ]
+        },
+        { type: 'paragraph', text: 'Neither option is automatically better than the other. The right choice depends on your financial goals, investment amount, risk tolerance and preferences.' },
+
+        { type: 'heading', text: 'What are the main types of PMS?' },
+        { type: 'paragraph', text: 'PMS services generally fall into three categories:' },
+        {
+          type: 'ordered-list',
+          items: [
+            '**Discretionary PMS:** The portfolio manager makes investment decisions on your behalf within the agreed investment strategy. You do not need to decide every time a security is bought or sold.',
+            '**Non-discretionary PMS:** The portfolio manager may suggest investment decisions, but transactions are carried out based on your directions or approval, as agreed in the service arrangement.',
+            '**Advisory PMS:** The manager provides investment advice, but you make the final investment decisions and handle the transactions.'
+          ]
+        },
+        { type: 'paragraph', text: 'The services available and their exact terms depend on the provider and agreement.' },
+
+        { type: 'heading', text: 'What are the benefits of investing in PMS?' },
+        { type: 'paragraph', text: 'PMS may offer several benefits to investors who are looking for a more personalised investment approach.' },
+        {
+          type: 'list',
+          items: [
+            '**Professional management:** Your portfolio is managed by an experienced investment team.',
+            '**Personalised approach:** The strategy can be better aligned with your investment objectives and agreed preferences.',
+            '**Direct ownership:** You generally hold the underlying securities in your own account.',
+            '**Portfolio transparency:** You can track individual holdings and transactions.',
+            '**Focused investment strategies:** Depending on the provider, you may access strategies that focus on particular sectors, companies or investment styles.'
+          ]
+        },
+        { type: 'paragraph', text: 'However, these benefits do not guarantee better performance than mutual funds or the overall market.' },
+
+        { type: 'heading', text: 'What are the risks of PMS?' },
+        { type: 'paragraph', text: 'Before investing, it is equally important to understand the risks.' },
+        {
+          type: 'list',
+          items: [
+            '**Market risk:** The value of your investments can fall when markets decline.',
+            '**Concentration risk:** A portfolio with limited holdings may be affected significantly if some investments perform poorly.',
+            '**High investment requirement:** The minimum investment of ₹50 lakh means a substantial amount of your wealth may be involved.',
+            '**Fees and charges:** Management fees, performance-linked fees, brokerage and other applicable expenses can affect your final returns.',
+            '**Manager-related risk:** The performance depends partly on the investment decisions and strategy followed by the portfolio manager.'
+          ]
+        },
+        { type: 'paragraph', text: "Always review the provider's investment approach, historical performance, fees and risk disclosures before making a decision. Past performance does not guarantee future returns." },
+
+        { type: 'heading', text: 'How are PMS returns generated?' },
+        { type: 'paragraph', text: 'PMS returns depend on how the underlying investments perform. If the securities in your portfolio increase in value, your portfolio may generate positive returns. If they decline, you may incur losses.' },
+        { type: 'paragraph', text: 'For example, if your ₹50 lakh portfolio grows to ₹60 lakh, the increase in value is ₹10 lakh before fees, taxes and other applicable costs.' },
+        { type: 'paragraph', text: 'Similarly, if the portfolio falls to ₹40 lakh, you would have a loss of ₹10 lakh before considering any distributions or other adjustments.' },
+        {
+          type: 'callout',
+          title: 'Key Takeaway on Returns',
+          text: 'The important thing to remember is that PMS does not guarantee returns. Do not select a PMS only because someone has shown you impressive past returns.'
+        },
+
+        { type: 'heading', text: 'Who should consider investing in PMS?' },
+        { type: 'paragraph', text: 'PMS may be worth exploring for investors who:' },
+        {
+          type: 'list',
+          items: [
+            'Have at least **₹50 lakh** available for investment.',
+            'Understand that stock market investments can involve significant losses.',
+            'Have a long-term investment horizon.',
+            'Want professional management and a more personalised investment strategy.',
+            'Can handle market fluctuations without needing to withdraw the money immediately.'
+          ]
+        },
+        { type: 'paragraph', text: 'Investors who are just starting their investment journey or need their money for short-term expenses should carefully consider whether PMS is suitable for them.' },
+        {
+          type: 'callout',
+          title: 'Disclaimer',
+          text: 'This article is for educational purposes only and should not be considered investment advice or a recommendation to invest in any particular PMS. Investments in securities are subject to market risks. Please read all relevant documents carefully before investing.'
+        }
+      ],
+      link: '#'
     }
   ];
 

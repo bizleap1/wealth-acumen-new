@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TrendingUp, PieChart, Umbrella, LineChart, Scroll, Landmark, Award } from 'lucide-react';
+import { TrendingUp, PieChart, Umbrella, LineChart, Scroll, Landmark, Award, Briefcase } from 'lucide-react';
 import './Services.css';
 
 const servicesList = [
@@ -46,6 +46,12 @@ const servicesList = [
     path: "/sif",
     description: "Specialized Investment Fund offering advanced investment strategies for experienced investors.",
     icon: Award
+  },
+  {
+    title: "PMS (Portfolio Management Service)",
+    path: "/pms",
+    description: "Personalized, institutional-grade portfolio management for HNIs with direct securities ownership and focused alpha strategies.",
+    icon: Briefcase
   }
 ];
 

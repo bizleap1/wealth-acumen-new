@@ -42,6 +42,7 @@ const Footer = () => {
               <li><Link to="/bonds">Bonds</Link></li>
               <li><Link to="/fixed-deposit">Fixed Deposit</Link></li>
               <li><Link to="/sif">SIF</Link></li>
+              <li><Link to="/pms">PMS (Portfolio Management Service)</Link></li>
             </ul>
           </div>
 

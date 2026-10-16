@@ -232,7 +232,7 @@
   top: 100%;
   left: 0;
   background-color: #ffffff;
-  min-width: 200px;
+  min-width: 260px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   border-radius: 4px;
   border-left: 4px solid #4f46e5; /* The thick indigo border */
@@ -256,7 +256,8 @@
   height: 20px;
 }
 
-.nav-item.has-dropdown:hover .dropdown-menu {
+.nav-item.has-dropdown:hover .dropdown-menu,
+.nav-item.has-dropdown.open .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
