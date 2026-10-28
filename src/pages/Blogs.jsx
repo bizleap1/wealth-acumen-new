@@ -4,6 +4,7 @@ import { ArrowRight, X, Share2, Check, Link as LinkIcon, MessageSquare } from 'l
 import { FaWhatsapp } from 'react-icons/fa';
 import { useLocation, Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import { updatePageSEO } from '../components/SEO';
 import './Blogs.css';
 
 const Blogs = () => {
@@ -704,6 +705,20 @@ const Blogs = () => {
       }
     }
   }, [location.search]);
+
+  useEffect(() => {
+    if (selectedBlog) {
+      updatePageSEO({
+        title: `${selectedBlog.title} | Wealth Acumen`,
+        description: selectedBlog.excerpt,
+        image: selectedBlog.image.startsWith('http') 
+          ? selectedBlog.image 
+          : `${window.location.origin}${selectedBlog.image}`
+      });
+    } else {
+      updatePageSEO();
+    }
+  }, [selectedBlog]);
 
   const getShareUrl = (id) => {
     const origin = window.location.origin.replace('localhost', '127.0.0.1');

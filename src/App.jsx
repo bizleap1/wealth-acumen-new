@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import RouteSEOListener from './components/SEO';
 import './index.css';
 
 // Lazy load secondary routes for optimal initial load time
@@ -41,6 +42,7 @@ const PageLoader = () => (
 function App() {
   return (
     <BrowserRouter>
+      <RouteSEOListener />
       <div className="app-container">
         <Navbar />
         
