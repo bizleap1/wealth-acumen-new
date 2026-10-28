@@ -1,12 +1,33 @@
 import React, { useState } from 'react';
 import { BookOpen, BarChart2, ShieldCheck, FileCheck, Download, Book, User, Mail, Phone, Lock, Shield } from 'lucide-react';
 import './EBook.css';
-import insuranceEbookPdf from '../assets/INSURANCE EBOOK.pdf';
-import technicalEbookPdf from '../assets/TECHNICAL ANALYSIS.pdf';
-import fundamentalEbookPdf from '../assets/FUNDAMENTAL ANALYSIS.pdf';
-import mutualFundEbookPdf from '../assets/MUTUAL FUND EBOOK.pdf';
-import fixedIncomeEbookPdf from '../assets/FIXED INCOME.pdf';
-import stockMarketBtsEbookPdf from '../assets/STOCK MARKET BEHIND THE SCENE.pdf';
+const EBOOK_FILES = {
+  'Insurance E-Book': {
+    url: '/ebooks/INSURANCE_EBOOK.pdf',
+    fileName: 'Insurance_EBook.pdf'
+  },
+  'Technical Analysis For Beginners': {
+    url: '/ebooks/TECHNICAL_ANALYSIS.pdf',
+    fileName: 'Technical_Analysis.pdf'
+  },
+  'Fundamental Analysis For Beginners': {
+    url: '/ebooks/FUNDAMENTAL_ANALYSIS.pdf',
+    fileName: 'Fundamental_Analysis.pdf'
+  },
+  'Mutual Fund': {
+    url: '/ebooks/MUTUAL_FUND_EBOOK.pdf',
+    fileName: 'Mutual_Fund_EBook.pdf'
+  },
+  'Fixed Income E-Book': {
+    url: '/ebooks/FIXED_INCOME.pdf',
+    fileName: 'Fixed_Income.pdf'
+  },
+  'Stock Market BTS E-book': {
+    url: '/ebooks/STOCK_MARKET_BEHIND_THE_SCENE.pdf',
+    fileName: 'Stock_Market_Behind_The_Scene.pdf'
+  }
+};
+
 const EBook = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,33 +44,13 @@ const EBook = () => {
       return;
     }
 
-    // Logic to download the selected E-Book
-    let pdfUrl = '';
-    let fileName = '';
-
-    if (ebook === 'Insurance E-Book') {
-      pdfUrl = insuranceEbookPdf;
-      fileName = 'Insurance_EBook.pdf';
-    } else if (ebook === 'Technical Analysis For Beginners') {
-      pdfUrl = technicalEbookPdf;
-      fileName = 'Technical_Analysis.pdf';
-    } else if (ebook === 'Fundamental Analysis For Beginners') {
-      pdfUrl = fundamentalEbookPdf;
-      fileName = 'Fundamental_Analysis.pdf';
-    } else if (ebook === 'Mutual Fund') {
-      pdfUrl = mutualFundEbookPdf;
-      fileName = 'Mutual_Fund_EBook.pdf';
-    } else if (ebook === 'Fixed Income E-Book') {
-      pdfUrl = fixedIncomeEbookPdf;
-      fileName = 'Fixed_Income.pdf';
-    } else if (ebook === 'Stock Market BTS E-book') {
-      pdfUrl = stockMarketBtsEbookPdf;
-      fileName = 'Stock_Market_Behind_The_Scene.pdf';
-    } else {
-      // For now, if other ebooks aren't uploaded, we can show an alert
+    const ebookConfig = EBOOK_FILES[ebook];
+    if (!ebookConfig) {
       alert(`The ${ebook} PDF is not uploaded yet. Please add it to assets and update the code.`);
       return;
     }
+
+    const { url: pdfUrl, fileName } = ebookConfig;
 
     // Create a temporary link element to trigger the download
     const link = document.createElement('a');

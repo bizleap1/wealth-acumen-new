@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Calendar, Phone, Mail, MapPin, Crown, Award, TrendingUp, ShieldCheck } from 'lucide-react';
-import atharvaImg from '../assets/image copy.png';
+import atharvaImg from '../assets/founder.jpg';
 import './FounderSection.css';
 
 const FounderSection = () => {
@@ -25,6 +25,8 @@ const FounderSection = () => {
                 <img 
                   src={atharvaImg} 
                   alt="Atharva Wadekar" 
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

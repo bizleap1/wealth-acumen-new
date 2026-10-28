@@ -89,6 +89,8 @@ const AngelOneSection = () => {
                 src={angelOneImg} 
                 alt="Angel One Logo" 
                 className="angel-logo-img"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

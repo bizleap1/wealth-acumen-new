@@ -62,7 +62,13 @@ const InsightsSection = () => {
             {insights.map(insight => (
               <a href={insight.link} target="_blank" rel="noopener noreferrer" key={insight.id} className="insight-card" style={{ textDecoration: 'none' }}>
                 <div className="insight-image-wrapper">
-                  <img src={insight.image} alt={insight.title} className="insight-image" />
+                  <img 
+                    src={insight.image} 
+                    alt={insight.title} 
+                    className="insight-image" 
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="insight-content">
                   <div className="insight-meta">

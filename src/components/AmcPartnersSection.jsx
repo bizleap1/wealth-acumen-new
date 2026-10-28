@@ -2,14 +2,14 @@ import React from 'react';
 import './AmcPartnersSection.css';
 
 const amcLogos = [
-  { id: 1, name: 'HDFC Mutual Fund', imgUrl: 'https://logo.clearbit.com/hdfcfund.com' },
-  { id: 2, name: 'Kotak Mutual Fund', imgUrl: 'https://logo.clearbit.com/kotakmf.com' },
-  { id: 3, name: 'SBI Mutual Fund', imgUrl: 'https://logo.clearbit.com/sbimf.com' },
-  { id: 4, name: 'Groww Mutual Fund', imgUrl: 'https://logo.clearbit.com/groww.in' },
-  { id: 5, name: 'Angel One', imgUrl: 'https://logo.clearbit.com/angelone.in' },
-  { id: 6, name: 'PPFAS Mutual Fund', imgUrl: 'https://logo.clearbit.com/amc.ppfas.com' },
-  { id: 7, name: 'Canara Robeco', imgUrl: 'https://logo.clearbit.com/canararobeco.com' },
-  { id: 8, name: 'DSP Mutual Fund', imgUrl: 'https://logo.clearbit.com/dspim.com' },
+  { id: 1, name: 'HDFC Mutual Fund', short: 'HDFC', badgeColor: '#004c8f' },
+  { id: 2, name: 'Kotak Mutual Fund', short: 'KOTAK', badgeColor: '#ed1c24' },
+  { id: 3, name: 'SBI Mutual Fund', short: 'SBI', badgeColor: '#1d4ed8' },
+  { id: 4, name: 'Groww Mutual Fund', short: 'GROWW', badgeColor: '#00d09c' },
+  { id: 5, name: 'Angel One', short: 'ANGEL', badgeColor: '#f97316' },
+  { id: 6, name: 'PPFAS Mutual Fund', short: 'PPFAS', badgeColor: '#831843' },
+  { id: 7, name: 'Canara Robeco', short: 'CANARA', badgeColor: '#0284c7' },
+  { id: 8, name: 'DSP Mutual Fund', short: 'DSP', badgeColor: '#334155' },
 ];
 
 const AmcPartnersSection = () => {
@@ -21,18 +21,19 @@ const AmcPartnersSection = () => {
         <div className="amc-carousel-container">
           <div className="amc-carousel-track">
             {/* Double the array for infinite scrolling effect */}
-            {[...amcLogos, ...amcLogos].map((logo, index) => (
-              <div key={`${logo.id}-${index}`} className="amc-logo-card">
-                <img 
-                  src={logo.imgUrl} 
-                  alt={logo.name} 
-                  className="amc-logo-img" 
-                  onError={(e) => { 
-                    e.target.style.display = 'none'; 
-                    e.target.nextSibling.style.display = 'block'; 
-                  }} 
-                />
-                <span className="amc-name" style={{ display: 'none' }}>{logo.name}</span>
+            {[...amcLogos, ...amcLogos].map((item, index) => (
+              <div key={`${item.id}-${index}`} className="amc-logo-card">
+                <div 
+                  className="amc-badge-pill" 
+                  style={{
+                    backgroundColor: `${item.badgeColor}15`,
+                    color: item.badgeColor,
+                    borderColor: `${item.badgeColor}30`
+                  }}
+                >
+                  {item.short}
+                </div>
+                <span className="amc-name">{item.name}</span>
               </div>
             ))}
           </div>

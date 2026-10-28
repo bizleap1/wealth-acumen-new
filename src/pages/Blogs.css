@@ -8,7 +8,7 @@
 .blogs-hero {
   padding: 180px 5% 100px; /* High padding top for transparent navbar */
   min-height: 500px;
-  background-image: url('/images/laptop-hero-placeholder.png'); /* The user will need to upload their hero image here if it's not contact-hero.png */
+  background-image: url('/images/blogs-hero-bg.png');
   background-color: #fdfaf6; /* Fallback beige background color from mockup */
   background-size: cover;
   background-position: right center;

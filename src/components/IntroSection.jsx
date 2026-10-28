@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import chooseUsImg from '../assets/choose us .png';
+import chooseUsImg from '../assets/choose_us.jpg';
 import './IntroSection.css';
 
 const IntroSection = () => {
@@ -27,6 +27,8 @@ const IntroSection = () => {
                 src={chooseUsImg} 
                 alt="Financial Consulting" 
                 className="modern-photo-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
