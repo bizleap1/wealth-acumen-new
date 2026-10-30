@@ -687,6 +687,103 @@ const Blogs = () => {
         }
       ],
       link: '#'
+    },
+    {
+      id: 12,
+      category: 'Markets & Economy',
+      image: '/images/tax_cut_fpi_blog.jpg',
+      date: 'October 30, 2026',
+      readTime: '5 min read',
+      author: 'Wealth Acumen',
+      title: 'Can a Tax Cut Bring Foreign Investors Back to India?',
+      excerpt: 'As foreign investors withdraw over ₹3.3 lakh crore from Indian equities, Jefferies suggests reducing capital gains taxes. But can tax cuts overcome valuation hurdles, currency headwinds, and competing global yields?',
+      content: [
+        { type: 'paragraph', text: 'Imagine you have money to invest and can choose between India and other countries. You would naturally look for the best opportunity to grow your money while keeping more of the profit you earn.' },
+        { type: 'paragraph', text: 'Foreign investors think the same way.' },
+        { type: 'paragraph', text: 'Recently, foreign investors have been selling Indian shares and moving their money elsewhere. Now, a new question has emerged: **Could reducing taxes on profits from shares encourage foreign investors to return to India?**' },
+        { type: 'paragraph', text: "Let's understand what is happening and what it could mean for the Indian stock market." },
+
+        { type: 'heading', text: '1. Why Are Foreign Investors Selling Indian Shares?' },
+        { type: 'paragraph', text: 'Foreign Portfolio Investors (FPIs) are foreign individuals, investment funds, and organisations that invest in India\'s stock market.' },
+        { type: 'paragraph', text: 'According to Jefferies, foreign investors withdrew around **₹1.8 lakh crore** from Indian equities in the financial year 2025–26. They reportedly sold another **₹1.5 lakh crore** between April and October 23, 2026—bringing the total recent outflow to over **₹3.3 lakh crore**.' },
+        {
+          type: 'table',
+          headers: ['Period / Timeline', 'FPI Net Outflows (Equities)', 'Key Driving Factors'],
+          rows: [
+            ['FY 2025–26', '₹1.80 lakh crore', 'Global interest rate adjustments, elevated valuations, USD strength'],
+            ['April – October 23, 2026', '₹1.50 lakh crore', 'AI-led East Asian rally, corporate earnings moderation, LTCG tax impact'],
+            ['Total Recent Outflow', '₹3.30+ lakh crore', 'Tactical global portfolio re-allocation towards competing markets']
+          ]
+        },
+        { type: 'paragraph', text: 'Taxes are one factor that may influence their decisions, but they are not the only reason. Investors also consider share prices, company profits, economic growth, and opportunities in other countries.' },
+        { type: 'paragraph', text: 'This sustained capital withdrawal has sparked an active discussion across Dalal Street and North Block about whether India\'s tax rules need to change.' },
+
+        { type: 'heading', text: '2. What Tax Changes Are Being Discussed?' },
+        { type: 'paragraph', text: 'A report by global investment brokerage **Jefferies on October 29, 2026**, suggested that reducing the tax on long-term profits from shares could encourage foreign investors to invest more in India.' },
+        { type: 'paragraph', text: 'Reports have also indicated that the government has sought opinions and recommendations from market participants, global institutional investors, and tax experts regarding stock market taxation.' },
+        {
+          type: 'callout',
+          title: 'Current Stock Market Tax Framework in India',
+          text: '• **Long-Term Capital Gains (LTCG):** Eligible long-term profits from listed shares are generally taxed at **12.5%** on gains exceeding ₹1.25 lakh in a financial year.\n• **Short-Term Capital Gains (STCG):** Eligible short-term profits are generally taxed at **20%**, subject to applicable statutory conditions (before surcharge and health & education cess).'
+        },
+        { type: 'paragraph', text: 'No reduction in these rates has been officially confirmed by the authorities. However, **three possible changes** are currently being discussed by market strategists and policy watchers.' },
+
+        { type: 'heading', text: '3. Three Possible Tax Changes Under Discussion' },
+        { type: 'paragraph', text: '**Option 1: Reduce the tax on profits from shares**' },
+        { type: 'paragraph', text: 'Suppose an investor earns a long-term profit of ₹10 lakh from eligible listed shares. If the full ₹1.25 lakh yearly deduction is available, the taxable amount is ₹8.75 lakh, resulting in a basic tax liability of **₹1,09,375**, before any applicable surcharge and cess.' },
+        { type: 'paragraph', text: 'If the tax rate is reduced, the investor could keep more of the profit. This may make Indian shares more attractive compared with investments in other countries.' },
+        { type: 'paragraph', text: '**Option 2: Give foreign investors a lower tax rate**' },
+        { type: 'paragraph', text: 'Another option is to charge foreign investors a lower tax rate on certain long-term profits than domestic investors pay. The idea is to make India more competitive when foreign investors compare investment opportunities around the world.' },
+        { type: 'paragraph', text: 'However, the government would need to consider whether different tax rates for foreign and Indian investors are fair and whether the economic benefits justify the loss in tax revenue.' },
+        { type: 'paragraph', text: '**Option 3: Change how foreign investors\' profits are calculated (Currency Adjustment)**' },
+        { type: 'paragraph', text: 'Foreign investors often measure their returns in their home currency (predominantly US Dollars). Changes in the rupee\'s value can affect how much their Indian investments are worth when converted back.' },
+        { type: 'paragraph', text: 'For example, an investment might rise from ₹90 lakh to ₹1 crore, giving an investor a ₹10 lakh profit in rupee terms. But if the rupee weakens during that period, the gain may be smaller when measured in foreign currency—or could even disappear.' },
+        {
+          type: 'table',
+          headers: ['Metric / Scenario Step', 'In Indian Rupees (INR)', 'In US Dollars (USD)', 'Real Investor Experience'],
+          rows: [
+            ['Nominal Portfolio Value', '₹90 Lakh ➔ ₹1 Crore (+11.1%)', '$108,400 ➔ $113,600 (+4.8%)', 'Rupee gain masked by currency depreciation'],
+            ['LTCG Tax Payable', '₹1.09 Lakh paid on INR gain', 'Charged on nominal INR profit', 'Taxes paid on "phantom" currency gains'],
+            ['Net Post-Tax Return', 'Positive return in INR', 'Substantially compressed net USD yield', 'Weakens comparative attractiveness vs US / East Asia']
+          ]
+        },
+        { type: 'paragraph', text: 'Jefferies has discussed whether changes to the way these gains are calculated—such as computing gains in foreign currency terms—could help foreign investors. This remains a proposal, not an approved rule.' },
+
+        { type: 'heading', text: '4. Will a Tax Cut Bring Foreign Investors Back?' },
+        { type: 'paragraph', text: '**Not necessarily.**' },
+        { type: 'paragraph', text: 'Think of a shop that reduces its prices to attract customers. Lower prices may help, but customers will not return if the products are poor or competitors offer better value.' },
+        { type: 'paragraph', text: 'The same applies to the stock market. Foreign investors also look at company profits, share prices, and India\'s future economic growth.' },
+        {
+          type: 'callout',
+          title: 'Expert View: Ridham Desai (Morgan Stanley India)',
+          text: 'Market expert Ridham Desai of Morgan Stanley India has reportedly cautioned that cutting taxes alone may not be enough to bring foreign investors back. They also need confidence that Indian shares offer attractive corporate earnings growth and reasonable valuations.'
+        },
+        { type: 'paragraph', text: 'In other words, a tax cut may help at the margin, but strong company performance, healthy quarterly earnings, and reasonable share prices matter just as much.' },
+
+        { type: 'heading', text: '5. How Could This Affect the Indian Rupee?' },
+        { type: 'paragraph', text: 'When foreign investors bring money into India, they exchange foreign currency for rupees to buy shares. This can increase demand for the rupee and help support its value.' },
+        { type: 'paragraph', text: 'When they sell shares and move money out of India, the opposite can happen, putting downward pressure on the rupee.' },
+        { type: 'paragraph', text: 'This is why Jefferies believes lower taxes could help both foreign investment and the rupee. However, crude oil prices, global interest rates, and the overall strength of the US dollar also heavily influence the currency.' },
+
+        { type: 'heading', text: '6. Why Might the Government Hesitate?' },
+        { type: 'paragraph', text: 'According to Jefferies, long-term capital gains tax collections were around **₹1.3 lakh crore** in the financial year 2024–25.' },
+        { type: 'paragraph', text: 'Reducing taxes could attract more investment, but it could also reduce government revenue needed for public spending, infrastructure, and social development.' },
+        {
+          type: 'list',
+          items: [
+            '**Fiscal Prudence:** The government must weigh potential tax revenue losses against anticipated foreign capital inflows.',
+            '**Tax Equity:** Offering tax breaks exclusively to foreign funds or capital market profits raises questions of fairness compared to salaried taxpayers and domestic citizens.',
+            '**Global Liquidity Reality:** Policymakers recognize that foreign institutional allocations depend fundamentally on global interest rates and macro earnings, not taxes alone.'
+          ]
+        },
+        { type: 'paragraph', text: 'The challenge is to make India attractive to foreign investors without unnecessarily reducing the money available for public spending and development.' },
+        {
+          type: 'callout',
+          title: 'Disclaimer',
+          text: 'This article is for educational purposes only and is not investment or tax advice. The changes discussed are proposals or possibilities, not confirmed changes to the law. Please consult a qualified advisor before making financial decisions.'
+        }
+      ],
+      link: '#'
     }
   ];
 
