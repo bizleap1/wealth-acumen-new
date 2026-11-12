@@ -784,6 +784,126 @@ const Blogs = () => {
         }
       ],
       link: '#'
+    },
+    {
+      id: 13,
+      category: 'Alternative Investments',
+      image: '/images/aif_blog.jpg',
+      date: 'November 12, 2026',
+      readTime: '6 min read',
+      author: 'Wealth Acumen',
+      title: 'Alternative Investment Funds (AIF): Meaning, Categories & Key Risks',
+      excerpt: 'Beyond mutual funds, shares, and fixed deposits, Alternative Investment Funds (AIFs) offer access to startups, private companies, real estate, and specialised strategies. Understand how SEBI categories, the ₹1 crore threshold, benefits, and risks work.',
+      content: [
+        { type: 'paragraph', text: 'When we talk about investments, most people think about mutual funds, shares, fixed deposits or gold. But there are other investment opportunities that allow investors to participate in businesses, startups, private companies and specialised investment strategies.' },
+        { type: 'paragraph', text: 'One such investment option is **Alternative Investment Funds (AIFs)**.' },
+        { type: 'paragraph', text: 'AIFs are designed for investors who want to explore investment opportunities beyond traditional investment products. But what exactly are AIFs, how do they work, and who should consider investing in them? Let\'s understand.' },
+
+        { type: 'heading', text: 'What is an Alternative Investment Fund (AIF)?' },
+        { type: 'paragraph', text: 'An **Alternative Investment Fund (AIF)** is a privately pooled investment fund that collects money from multiple investors and invests it according to a specific investment strategy.' },
+        { type: 'paragraph', text: 'In simple words, imagine a fund manager wants to invest in promising startups, private companies or real estate projects. Instead of investing personal money, the fund manager collects money from multiple investors and invests it in these opportunities.' },
+        { type: 'paragraph', text: 'The fund manager manages the investments, and investors receive their share of the profits or losses according to the fund\'s terms.' },
+        { type: 'paragraph', text: 'Unlike traditional mutual funds, AIFs can invest in a wider range of assets, including unlisted companies, private businesses, debt instruments and specialised investment strategies.' },
+
+        { type: 'heading', text: 'What are the different types of AIF?' },
+        { type: 'paragraph', text: 'SEBI has classified AIFs into **three categories** based on their investment strategies.' },
+
+        { type: 'paragraph', text: '**1. Category I AIF**' },
+        { type: 'paragraph', text: 'These funds generally invest in businesses and sectors that are considered economically or socially beneficial.' },
+        {
+          type: 'list',
+          items: [
+            'Venture Capital Funds',
+            'Angel Funds',
+            'SME Funds',
+            'Infrastructure Funds',
+            'Social Venture Funds'
+          ]
+        },
+        { type: 'paragraph', text: 'For example, a Venture Capital Fund may invest in a startup that needs money to develop its business and expand operations.' },
+
+        { type: 'paragraph', text: '**2. Category II AIF**' },
+        { type: 'paragraph', text: 'These funds generally invest in private companies, debt and other permitted assets. They do not undertake leverage or borrowing except for permitted temporary funding requirements.' },
+        {
+          type: 'list',
+          items: [
+            'Private Equity Funds',
+            'Debt Funds',
+            'Real Estate Funds',
+            'Fund of Funds'
+          ]
+        },
+        { type: 'paragraph', text: 'For example, a Private Equity Fund may invest in an established company that needs capital to expand its business.' },
+
+        { type: 'paragraph', text: '**3. Category III AIF**' },
+        { type: 'paragraph', text: 'These funds use complex investment strategies and may use leverage to generate returns. They can invest in listed and unlisted securities and use derivatives.' },
+        {
+          type: 'list',
+          items: [
+            'Hedge Funds',
+            'Long-Short Funds',
+            'Quantitative Investment Strategy Funds'
+          ]
+        },
+        { type: 'paragraph', text: 'For example, a Category III fund may buy selected shares while taking short positions in other shares, depending on its investment strategy.' },
+
+        { type: 'heading', text: 'What is the minimum investment required for AIF?' },
+        { type: 'paragraph', text: 'In India, the general minimum investment requirement for an AIF is **₹1 crore per investor**.' },
+        { type: 'paragraph', text: 'This makes AIFs a high-ticket investment product, generally considered by high-net-worth investors.' },
+        {
+          type: 'callout',
+          title: 'Regulatory Note',
+          text: 'Certain exceptions to the ₹1 crore minimum investment apply under SEBI regulations, including specific provisions for employees, directors, and accredited investors.'
+        },
+
+        { type: 'heading', text: 'What are the benefits of investing in AIF?' },
+        { type: 'paragraph', text: 'AIFs provide access to investment opportunities that may not be easily available through traditional investment products.' },
+        {
+          type: 'list',
+          items: [
+            '**Professional management:** Investments are managed by professional fund managers.',
+            '**Different investment opportunities:** Investors can participate in startups, private companies, real estate and specialised strategies.',
+            '**Portfolio diversification:** AIFs can provide exposure to assets beyond conventional equity and debt investments.',
+            '**Specialised strategies:** Different funds follow different investment approaches depending on their objectives.',
+            '**Long-term opportunities:** Some AIFs invest in businesses with the objective of benefiting from their growth over several years.'
+          ]
+        },
+        { type: 'paragraph', text: 'However, these benefits do not guarantee higher returns.' },
+
+        { type: 'heading', text: 'What are the risks of investing in AIF?' },
+        { type: 'paragraph', text: 'Before investing, it is equally important to understand the risks.' },
+        {
+          type: 'list',
+          items: [
+            '**High investment amount:** The general minimum investment of ₹1 crore makes AIFs unsuitable for many small investors.',
+            '**Liquidity risk:** Some AIFs lock in investments for several years, making early withdrawals difficult or impossible.',
+            '**Market and business risk:** Investments in shares, startups and private companies can lose value.',
+            '**Fund manager risk:** Poor investment decisions can affect the overall performance of the fund.',
+            '**High costs:** Management fees, performance fees and other expenses can reduce investor returns.'
+          ]
+        },
+        { type: 'paragraph', text: 'Therefore, investors should carefully study the fund\'s strategy, expenses, tenure and risk factors before investing.' },
+
+        { type: 'heading', text: 'Difference between Mutual Funds, PMS and AIF' },
+        { type: 'paragraph', text: 'All three products offer professional investment management, but their structures are different.' },
+        {
+          type: 'table',
+          headers: ['Feature', 'Mutual Funds', 'PMS', 'AIF'],
+          rows: [
+            ['Minimum investment', 'Usually small', '₹50 lakh', 'Generally ₹1 crore'],
+            ['Structure', 'Pooled investment', 'Individual portfolio', 'Pooled investment'],
+            ['Management', 'Fund manager', 'Portfolio manager', 'AIF manager'],
+            ['Investment options', 'Primarily securities', 'Securities and permitted assets', 'Wider range of permitted assets and strategies'],
+            ['Liquidity', 'Depends on scheme', 'Depends on agreement', 'Depends on fund structure']
+          ]
+        },
+        {
+          type: 'callout',
+          title: 'Key Takeaway',
+          text: 'The biggest difference is that AIFs can provide exposure to private markets and specialised investment strategies that may not be available through regular mutual funds.'
+        }
+      ],
+      link: '#'
     }
   ];
 
