@@ -904,6 +904,76 @@ const Blogs = () => {
         }
       ],
       link: '#'
+    },
+    {
+      id: 14,
+      category: 'Commodities & ETFs',
+      image: '/images/gold_silver_etf_blog.jpg',
+      date: 'November 14, 2026',
+      readTime: '5 min read',
+      author: 'Wealth Acumen',
+      title: 'Gold and Silver ETFs Fall Up to 3%: Is This the Right Time to Invest?',
+      excerpt: 'On November 12, 2026, gold and silver ETFs in India fell up to 3% as a stronger US dollar and expectations of US Fed rate hikes pressured precious metals. Explore why prices fell, how gold compares to silver, and strategic allocation tips for investors.',
+      content: [
+        { type: 'paragraph', text: 'Gold and silver have always been considered important investment options, especially during uncertain economic conditions. Many investors buy gold to protect their wealth, while silver attracts attention because of its industrial demand and investment potential.' },
+        { type: 'paragraph', text: 'But what happens when these metals suddenly start losing value?' },
+        { type: 'paragraph', text: 'On November 12, 2026, gold and silver ETFs in India witnessed a decline of up to 3%. Several gold ETFs fell by around 2%, while some silver ETFs declined by as much as 3%. The fall came as a stronger US dollar and expectations of an interest rate hike by the US Federal Reserve put pressure on precious metal prices.' },
+        { type: 'paragraph', text: 'So, should investors be worried, or is this an opportunity to invest at lower prices?' },
+
+        { type: 'heading', text: 'Why Are Gold and Silver Prices Falling?' },
+        { type: 'paragraph', text: 'There are two major macroeconomic reasons behind the recent decline:' },
+        { type: 'paragraph', text: '**1. Stronger US Dollar**' },
+        { type: 'paragraph', text: 'Gold and silver are internationally traded in US dollars. When the dollar becomes stronger, these metals become more expensive for buyers using other currencies. This can reduce international demand and put downward pressure on their prices.' },
+        { type: 'paragraph', text: 'Recently, the US dollar climbed to a 19-month high, putting additional pressure on gold and silver.' },
+
+        { type: 'paragraph', text: '**2. Expectations of a US Interest Rate Hike**' },
+        { type: 'paragraph', text: 'The second reason is the possibility of an interest rate hike by the US Federal Reserve. When interest rates increase, investors may find interest-bearing investments such as bonds and deposits more attractive compared with gold, which does not generate regular interest income.' },
+        { type: 'paragraph', text: 'Recent US inflation data came in higher than expected, increasing expectations of another rate hike in December. This has affected investor sentiment towards precious metals.' },
+
+        { type: 'heading', text: 'Should Investors Buy Gold and Silver ETFs During This Fall?' },
+        { type: 'paragraph', text: 'A fall in prices often attracts investors who were waiting for an opportunity to enter the market. However, a price correction does not necessarily mean that prices will recover immediately.' },
+        { type: 'paragraph', text: 'Gold and silver should ideally be viewed as part of an investor\'s overall asset allocation rather than investments made only to benefit from short-term price movements.' },
+        { type: 'paragraph', text: 'Investors who already have exposure to these metals can review their allocation and check whether it is in line with their financial goals.' },
+        { type: 'paragraph', text: 'Those planning to invest can consider **staggered investments (SIP or tranche buying)** instead of putting a large amount into the market at once.' },
+
+        { type: 'heading', text: 'Gold vs Silver: Are They the Same Investment?' },
+        { type: 'paragraph', text: 'Although both are precious metals, their underlying dynamics and price movements can be quite different.' },
+        {
+          type: 'table',
+          headers: ['Feature / Metric', 'Gold ETFs', 'Silver ETFs'],
+          rows: [
+            ['Primary Demand Driver', 'Store of value, central bank reserves, jewellery', 'Industrial demand (solar panels, electronics, EVs) + investment'],
+            ['Volatility Profile', 'Lower volatility; classic safe-haven hedge', 'Higher volatility; sharper percentage swings'],
+            ['Economic Sensitivity', 'Performs strongly during economic uncertainty & high inflation', 'Closely tied to industrial production & economic manufacturing cycles'],
+            ['Portfolio Function', 'Capital preservation & crisis shield', 'Tactical commodity exposure with growth upside']
+          ]
+        },
+        { type: 'paragraph', text: 'Gold is generally considered a store of value and is often used as a portfolio diversifier during periods of economic uncertainty.' },
+        { type: 'paragraph', text: 'Silver, on the other hand, has both investment and industrial demand. It is used in industries such as electronics, solar energy and manufacturing. Because of this, silver can experience sharper price movements than gold.' },
+        { type: 'paragraph', text: 'Therefore, investors should understand that silver carries higher volatility and should not automatically be treated as a direct substitute for gold.' },
+
+        { type: 'heading', text: 'What Should Investors Do Now?' },
+        { type: 'paragraph', text: 'Instead of reacting to every market correction, investors should stay anchored to a disciplined investment strategy:' },
+        {
+          type: 'list',
+          items: [
+            '**Avoid investing just because prices have fallen:** A correction alone does not guarantee a quick rebound.',
+            '**Consider gold and silver as part of a diversified portfolio:** Maintain a disciplined allocation (typically 5% to 10% in precious metals).',
+            '**Use staggered investments:** Systematic accumulation helps average out purchase costs across volatile market swings.',
+            '**Review your existing allocation:** Rebalance if your precious metal exposure has drifted from your target asset allocation.',
+            '**Understand volatility differences:** Remember that silver carries substantially higher cyclical risk than gold.',
+            '**Avoid short-term speculation:** Base decisions on long-term financial goals rather than market timing or quick predictions.'
+          ]
+        },
+        { type: 'paragraph', text: 'Market corrections are a normal part of investing. Gold and silver can experience periods of strong growth as well as sharp declines, depending on global economic conditions, interest rates, currency movements and investor demand.' },
+        { type: 'paragraph', text: 'A temporary fall should not automatically create panic, just as a sudden rise should not encourage investors to invest without proper planning.' },
+        {
+          type: 'callout',
+          title: 'Disclaimer',
+          text: 'This article is for educational and informational purposes only. It should not be considered investment advice or a recommendation to buy or sell gold or silver ETFs. Investments are subject to market risks. Please consider your financial goals and risk appetite before investing.'
+        }
+      ],
+      link: '#'
     }
   ];
 
