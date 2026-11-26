@@ -1,29 +1,75 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
   
-  const isFirstPartFilled = name.trim() !== '' && email.trim() !== '';
+  const isFirstPartFilled = name.trim() !== '' && email.trim() !== '' && phone.trim() !== '';
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !subject || !message) {
-      alert("Please fill out all fields before sending.");
+    setStatus({ type: '', message: '' });
+
+    if (!name.trim() || !email.trim() || !phone.trim() || !subject.trim() || !message.trim()) {
+      setStatus({
+        type: 'error',
+        message: 'Please fill out all fields before sending.'
+      });
       return;
     }
-    const mailSubject = `Contact Form: ${subject}`;
-    const mailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    window.location.href = `mailto:info@wealthacumen.in?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-    alert("Thank you! Your email client will now open so you can send your message.");
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          subject: subject.trim(),
+          message: message.trim()
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.success) {
+        setStatus({
+          type: 'success',
+          message: 'Thank you for contacting us! Your enquiry has been submitted successfully. Our team will get back to you shortly.'
+        });
+        setName('');
+        setEmail('');
+        setPhone('');
+        setSubject('');
+        setMessage('');
+      } else {
+        const errorMsg = data.error || (data.details && data.details[0]) || 'Unable to submit your enquiry at the moment. Please try again later.';
+        setStatus({
+          type: 'error',
+          message: errorMsg
+        });
+      }
+    } catch (err) {
+      console.error('[ContactPage] Submission failed:', err);
+      setStatus({
+        type: 'error',
+        message: 'Unable to submit your enquiry at the moment. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -77,31 +123,104 @@ const Contact = () => {
           
           <div className="contact-form-wrapper">
             <h2>Send us a Message</h2>
+
+            {status.message && (
+              <div className={`contact-status-banner ${status.type}`}>
+                {status.type === 'success' ? (
+                  <CheckCircle2 size={20} className="status-icon" />
+                ) : (
+                  <AlertCircle size={20} className="status-icon" />
+                )}
+                <span>{status.message}</span>
+              </div>
+            )}
+
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-col">
                   <div className="form-group">
-                    <label>Your Name</label>
-                    <input type="text" placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} required />
+                    <label>Your Name *</label>
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      disabled={isSubmitting}
+                    />
                   </div>
                   <div className="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="john@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <label>Email Address *</label>
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Phone Number *</label>
+                    <input
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </div>
                 
                 <div className={`form-col ${!isFirstPartFilled ? 'col-disabled' : ''}`}>
                   <div className="form-group">
-                    <label>Subject</label>
-                    <input type="text" placeholder="How can we help?" value={subject} onChange={(e) => setSubject(e.target.value)} disabled={!isFirstPartFilled} required />
+                    <label>Subject *</label>
+                    <input
+                      type="text"
+                      placeholder="How can we help?"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                      disabled={!isFirstPartFilled || isSubmitting}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label>Message</label>
-                    <textarea rows="4" placeholder="Write your message here..." value={message} onChange={(e) => setMessage(e.target.value)} disabled={!isFirstPartFilled} required></textarea>
+                    <label>Message *</label>
+                    <textarea
+                      rows="6"
+                      placeholder="Write your message here..."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      disabled={!isFirstPartFilled || isSubmitting}
+                      required
+                    ></textarea>
                   </div>
                 </div>
               </div>
-              <button type="submit" className="primary-btn-gold" style={{width: '100%', opacity: isFirstPartFilled ? 1 : 0.5}} disabled={!isFirstPartFilled}>Send Message</button>
+              <button
+                type="submit"
+                className="primary-btn-gold"
+                style={{
+                  width: '100%',
+                  opacity: (isFirstPartFilled && !isSubmitting) ? 1 : 0.6,
+                  cursor: (isFirstPartFilled && !isSubmitting) ? 'pointer' : 'not-allowed',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px'
+                }}
+                disabled={!isFirstPartFilled || isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={18} className="spinner-animate" />
+                    <span>Submitting Enquiry...</span>
+                  </>
+                ) : (
+                  <span>Send Message</span>
+                )}
+              </button>
             </form>
           </div>
         </div>

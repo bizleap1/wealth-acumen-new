@@ -52,6 +52,12 @@ const servicesList = [
     path: "/pms",
     description: "Personalized, institutional-grade portfolio management for HNIs with direct securities ownership and focused alpha strategies.",
     icon: Briefcase
+  },
+  {
+    title: "AIF (Alternative Investment Fund)",
+    path: "/aif",
+    description: "Exclusive pooled investment vehicle for HNIs with ₹1 Crore minimum ticket into private equity, private debt, and hedge strategies.",
+    icon: Award
   }
 ];
 

@@ -71,19 +71,19 @@
 }
 
 .registration-info {
-  margin-top: 15px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .registration-info p {
-  font-size: 0.8rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #cbd5e1;
   margin: 0;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 /* Links & Services */

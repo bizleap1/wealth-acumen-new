@@ -76,6 +76,7 @@ const Navbar = () => {
                 <Link to="/fixed-deposit" onClick={closeMenu}>Fixed Deposit</Link>
                 <Link to="/sif" onClick={closeMenu}>SIF</Link>
                 <Link to="/pms" onClick={closeMenu}>PMS (Portfolio Management Service)</Link>
+                <Link to="/aif" onClick={closeMenu}>AIF (Alternative Investment Fund)</Link>
                 <Link to="/investment-resources" onClick={closeMenu}>Investment Resources</Link>
               </div>
             </li>
@@ -85,6 +86,7 @@ const Navbar = () => {
                 <Link to="/sip-calculator" onClick={closeMenu}>SIP Calculator</Link>
                 <Link to="/asset-allocation-calculator" onClick={closeMenu}>Asset Allocation Calculator</Link>
                 <Link to="/e-book" onClick={closeMenu}>E-Book</Link>
+                <a href="https://mfs.kfintech.com/investor/general/pankycvalidate" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>KYC STATUS</a>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'examination' ? 'open' : ''}`}>
@@ -100,8 +102,18 @@ const Navbar = () => {
                 <a href="https://www.amfiindia.com/investor/knowledge-center-info?zoneName=TaxRegimeForMutualFunds" target="_blank" rel="noopener noreferrer">MUTUAL FUND TAXATION</a>
               </div>
             </li>
-            <li className="nav-item"><Link to="/blogs">Blogs</Link></li>
-            <li className="nav-item"><Link to="/contact">Contact Us</Link></li>
+            <li className="nav-item"><Link to="/blogs" onClick={closeMenu}>Blogs</Link></li>
+            <li className="nav-item"><Link to="/careers" onClick={closeMenu}>Careers</Link></li>
+            <li className="nav-item"><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
+            <li className="nav-item nav-item-quick-invest">
+              <Link 
+                to="/quick-invest" 
+                className={`btn-quick-invest ${location.pathname === '/quick-invest' || location.pathname === '/quickinvest' ? 'active' : ''}`}
+                onClick={closeMenu}
+              >
+                Quick Invest
+              </Link>
+            </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'login' ? 'open' : ''}`}>
               <a href="#" onClick={(e) => toggleDropdown(e, 'login')}>Login/Register <span className="dropdown-icon"><ChevronDown size={14}/></span></a>
               <div className="dropdown-menu">

@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { BookOpen, BarChart2, ShieldCheck, FileCheck, Download, Book, User, Mail, Phone, Lock, Shield } from 'lucide-react';
+import { 
+  BarChart2, 
+  ShieldCheck, 
+  FileCheck, 
+  Download, 
+  User, 
+  Mail, 
+  Phone, 
+  Lock, 
+  Briefcase, 
+  BookOpen, 
+  CheckCircle2, 
+  AlertCircle, 
+  Loader2 
+} from 'lucide-react';
 import './EBook.css';
 const EBOOK_FILES = {
   'Insurance E-Book': {
@@ -33,35 +47,110 @@ const EBook = () => {
     name: '',
     email: '',
     phone: '',
+    company: '',
     ebook: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, phone, ebook } = formData;
-    if (!name || !email || !phone || !ebook) {
-      alert("Please fill out all fields.");
+    if (isSubmitting) return;
+
+    const { name, email, phone, company, ebook } = formData;
+    
+    // Strict Client Validation
+    if (!name || name.trim().length < 2) {
+      setStatusMessage({ type: 'error', text: 'Please enter your full name (minimum 2 characters).' });
       return;
     }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email.trim())) {
+      setStatusMessage({ type: 'error', text: 'Please enter a valid email address.' });
+      return;
+    }
+    const cleanPhone = (phone || '').replace(/[^0-9]/g, '');
+    if (cleanPhone.length < 8) {
+      setStatusMessage({ type: 'error', text: 'Please enter a valid mobile number (minimum 8 digits).' });
+      return;
+    }
+    if (!ebook || !EBOOK_FILES[ebook]) {
+      setStatusMessage({ type: 'error', text: 'Please select an e-book from the dropdown list.' });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatusMessage(null);
 
     const ebookConfig = EBOOK_FILES[ebook];
-    if (!ebookConfig) {
-      alert(`The ${ebook} PDF is not uploaded yet. Please add it to assets and update the code.`);
-      return;
+    let downloadInitiated = false;
+
+    try {
+      const response = await fetch('/api/download-ebook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          company: company.trim(),
+          ebook: ebook
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // Trigger the file download
+        const downloadUrl = data.downloadUrl || ebookConfig?.url;
+        const fileName = data.fileName || ebookConfig?.fileName || 'ebook.pdf';
+
+        if (downloadUrl) {
+          const link = document.createElement('a');
+          link.href = downloadUrl;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          downloadInitiated = true;
+        }
+
+        setStatusMessage({
+          type: 'success',
+          text: `Thank you, ${name.trim()}! Your e-book "${ebook}" download has started. Our advisory desk has been notified.`
+        });
+
+        // Reset the form on successful submission
+        setFormData({ name: '', email: '', phone: '', company: '', ebook: '' });
+      } else {
+        throw new Error(data.error || 'Server was unable to process the request.');
+      }
+    } catch (err) {
+      console.warn('[EBook] Backend submission warning, using client fallback:', err.message);
+
+      // Graceful Fallback: Ensure download happens even if email service has a temporary glitch
+      if (!downloadInitiated && ebookConfig) {
+        const link = document.createElement('a');
+        link.href = ebookConfig.url;
+        link.download = ebookConfig.fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        setStatusMessage({
+          type: 'success',
+          text: `Thank you, ${name.trim()}! Your e-book "${ebook}" download has started.`
+        });
+        setFormData({ name: '', email: '', phone: '', company: '', ebook: '' });
+      } else {
+        setStatusMessage({
+          type: 'error',
+          text: err.message || 'Unable to initiate download. Please check your details and try again.'
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const { url: pdfUrl, fileName } = ebookConfig;
-
-    // Create a temporary link element to trigger the download
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    alert("Thank you! Your E-Book download will start shortly.");
-    setFormData({ name: '', email: '', phone: '', ebook: '' });
   };
 
   return (
@@ -122,32 +211,99 @@ const EBook = () => {
               <div className="form-grid">
                 <div className="input-group">
                   <User size={18} color="#64748b" className="input-icon" />
-                  <input type="text" placeholder="Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                  <input 
+                    type="text" 
+                    placeholder="Full Name *" 
+                    required
+                    value={formData.name} 
+                    onChange={(e) => {
+                      setFormData({...formData, name: e.target.value});
+                      if (statusMessage) setStatusMessage(null);
+                    }} 
+                  />
                 </div>
                 <div className="input-group">
                   <Mail size={18} color="#64748b" className="input-icon" />
-                  <input type="email" placeholder="Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                  <input 
+                    type="email" 
+                    placeholder="Email Address *" 
+                    required
+                    value={formData.email} 
+                    onChange={(e) => {
+                      setFormData({...formData, email: e.target.value});
+                      if (statusMessage) setStatusMessage(null);
+                    }} 
+                  />
                 </div>
                 <div className="input-group">
                   <Phone size={18} color="#64748b" className="input-icon" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+                  <input 
+                    type="tel" 
+                    placeholder="Mobile Number *" 
+                    required
+                    value={formData.phone} 
+                    onChange={(e) => {
+                      setFormData({...formData, phone: e.target.value});
+                      if (statusMessage) setStatusMessage(null);
+                    }} 
+                  />
                 </div>
-                <div className="input-group select-group">
+                <div className="input-group">
+                  <Briefcase size={18} color="#64748b" className="input-icon" />
+                  <input 
+                    type="text" 
+                    placeholder="Company Name (Optional)" 
+                    value={formData.company} 
+                    onChange={(e) => {
+                      setFormData({...formData, company: e.target.value});
+                      if (statusMessage) setStatusMessage(null);
+                    }} 
+                  />
+                </div>
+                <div className="input-group select-group full-width">
                   <BookOpen size={18} color="#64748b" className="input-icon" />
-                  <select value={formData.ebook} onChange={(e) => setFormData({...formData, ebook: e.target.value})}>
-                    <option value="" disabled>Select E-Book</option>
-                    <option value="Technical Analysis For Beginners">Technical Analysis</option>
-                    <option value="Fundamental Analysis For Beginners">Fundamental Analysis</option>
+                  <select 
+                    value={formData.ebook} 
+                    required
+                    onChange={(e) => {
+                      setFormData({...formData, ebook: e.target.value});
+                      if (statusMessage) setStatusMessage(null);
+                    }}
+                  >
+                    <option value="" disabled>Select E-Book *</option>
+                    <option value="Technical Analysis For Beginners">Technical Analysis For Beginners</option>
+                    <option value="Fundamental Analysis For Beginners">Fundamental Analysis For Beginners</option>
                     <option value="Mutual Fund">Mutual Fund E-Book</option>
                     <option value="Insurance E-Book">Insurance E-Book</option>
-                    <option value="Fixed Income E-Book">Fixed Income</option>
+                    <option value="Fixed Income E-Book">Fixed Income E-Book</option>
                     <option value="Stock Market BTS E-book">Stock Market BTS E-book</option>
                   </select>
                 </div>
               </div>
+
+              {statusMessage && (
+                <div className={`form-status-alert ${statusMessage.type}`}>
+                  {statusMessage.type === 'success' ? (
+                    <CheckCircle2 size={18} className="status-icon" />
+                  ) : (
+                    <AlertCircle size={18} className="status-icon" />
+                  )}
+                  <span>{statusMessage.text}</span>
+                </div>
+              )}
               
-              <button type="submit" className="download-btn">
-                Download
+              <button type="submit" className="download-btn" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={20} className="spin-icon" />
+                    <span>Processing Download...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download size={20} />
+                    <span>Download E-Book</span>
+                  </>
+                )}
               </button>
               
               <div className="trust-markers">

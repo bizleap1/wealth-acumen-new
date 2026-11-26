@@ -1,0 +1,137 @@
+.careers-page {
+  min-height: 85vh;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}
+
+.careers-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 60px auto 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.careers-empty-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  padding: 50px 40px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.careers-icon-bubble {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.careers-briefcase-icon {
+  color: #64748b;
+}
+
+.careers-empty-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px;
+  letter-spacing: -0.3px;
+}
+
+.careers-empty-desc {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 0 28px;
+}
+
+.careers-contact-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+.careers-mail-icon {
+  color: #fca311;
+  flex-shrink: 0;
+}
+
+.careers-contact-box a {
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.careers-contact-box a:hover {
+  color: #fca311;
+}
+
+.careers-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-careers-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-careers-home:hover {
+  background: #fca311;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(252, 163, 17, 0.25);
+}
+
+@media (max-width: 640px) {
+  .careers-container {
+    margin: 40px auto 70px;
+  }
+
+  .careers-empty-card {
+    padding: 36px 20px;
+  }
+
+  .careers-empty-title {
+    font-size: 1.3rem;
+  }
+
+  .careers-empty-desc {
+    font-size: 0.92rem;
+  }
+
+  .careers-contact-box {
+    flex-direction: column;
+    text-align: center;
+    border-radius: 12px;
+  }
+}

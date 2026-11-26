@@ -96,7 +96,7 @@
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: clamp(14px, 1.6vw, 30px);
   align-items: center;
 }
 
@@ -139,6 +139,69 @@
 .nav-actions {
   display: flex;
   align-items: center;
+}
+
+/* Quick Invest Header CTA Button */
+.nav-item-quick-invest {
+  display: flex;
+  align-items: center;
+}
+
+.btn-quick-invest {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 18px !important;
+  border-radius: 9999px;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out !important;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* Dark Theme Header */
+.main-nav.dark-theme .btn-quick-invest {
+  color: #fca311 !important;
+  border: 1.5px solid #fca311;
+  background: rgba(252, 163, 17, 0.08);
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.15);
+}
+
+.main-nav.dark-theme .btn-quick-invest:hover,
+.main-nav.dark-theme .btn-quick-invest.active {
+  background: #fca311 !important;
+  color: #0b1120 !important;
+  border-color: #fca311 !important;
+  box-shadow: 0 4px 16px rgba(252, 163, 17, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Light Theme Header (solid light or scrolled) */
+.main-nav.light-theme .btn-quick-invest,
+.site-header.scrolled .btn-quick-invest {
+  color: #ffffff !important;
+  border: 1.5px solid #0f172a !important;
+  background: #0f172a !important;
+}
+
+.main-nav.light-theme .btn-quick-invest:hover,
+.site-header.scrolled .btn-quick-invest:hover {
+  background: #fca311 !important;
+  border-color: #fca311 !important;
+  color: #0b1120 !important;
+  box-shadow: 0 4px 14px rgba(252, 163, 17, 0.35);
+  transform: translateY(-1px);
+}
+
+.main-nav.light-theme .btn-quick-invest.active,
+.site-header.scrolled .btn-quick-invest.active {
+  background: #0f172a !important;
+  color: #fca311 !important;
+  border-color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
 }
 
 .btn-login {
@@ -189,6 +252,25 @@
 
   .mobile-menu-toggle {
     display: block;
+  }
+  
+  .nav-item-quick-invest {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .nav-item-quick-invest .btn-quick-invest {
+    width: 100%;
+    padding: 12px 20px !important;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fca311 0%, #e08b04 100%) !important;
+    color: #0b1120 !important;
+    border: none !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(252, 163, 17, 0.25);
   }
   
   .main-nav.dark-theme .nav-menu.active a {

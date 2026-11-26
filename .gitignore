@@ -1,3 +1,12 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local Data / Storage
+data/*.json
+!data/.gitkeep
+
 # Logs
 logs
 *.log

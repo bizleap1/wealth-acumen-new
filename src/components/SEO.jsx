@@ -52,6 +52,11 @@ export const PAGE_SEO = {
     description: 'Discover SEBI-regulated Specialised Investment Funds (SIF) with ₹10 lakh minimum investment. Explore advanced long-short strategies and risk management.',
     keywords: 'specialised investment fund, sif sebi, advanced investment strategies, 10 lakh investment threshold, alternative investment'
   },
+  '/aif': {
+    title: 'Alternative Investment Funds (AIF) | Wealth Acumen',
+    description: 'Explore SEBI-regulated Category I, II, and III Alternative Investment Funds (AIF) for sophisticated investors. Access private equity, venture capital, and hedge strategies.',
+    keywords: 'alternative investment fund, aif sebi, category 1 aif, category 2 aif, category 3 aif, private equity india, hedge fund, hni investments mumbai'
+  },
   '/pms': {
     title: 'Portfolio Management Services (PMS) | Wealth Acumen',
     description: 'Institutional-grade, personalized portfolio management for HNIs starting at ₹50 lakh. Direct security ownership, focused alpha generation, and custom strategies.',
@@ -91,6 +96,21 @@ export const PAGE_SEO = {
     title: 'FAQs - Mutual Funds & Wealth Advisory | Wealth Acumen',
     description: 'Find clear answers to common questions about mutual funds, SIPs, investment safety, advisory costs, account setup, and portfolio rebalancing.',
     keywords: 'wealth acumen faqs, mutual fund questions, sip investment guide, financial planning doubts, amfi distributor faqs'
+  },
+  '/careers': {
+    title: 'Careers & Opportunities | Wealth Acumen',
+    description: 'Explore career opportunities at Wealth Acumen. Join our team and grow your career in wealth management and financial advisory.',
+    keywords: 'wealth acumen careers, jobs in wealth management, finance jobs mumbai, financial analyst openings'
+  },
+  '/quick-invest': {
+    title: 'Quick Invest - Curated Mutual Funds | Wealth Acumen',
+    description: 'Explore our selected mutual funds across Hybrid, Equity, and Debt categories. Live NAV tracking, CAGR performance metrics, and seamless assisted onboarding.',
+    keywords: 'quick invest, mutual funds, hybrid funds, equity funds, live nav, invest in mutual funds, wealth acumen'
+  },
+  '/quickinvest': {
+    title: 'Quick Invest - Curated Mutual Funds | Wealth Acumen',
+    description: 'Explore our selected mutual funds across Hybrid, Equity, and Debt categories. Live NAV tracking, CAGR performance metrics, and seamless assisted onboarding.',
+    keywords: 'quick invest, mutual funds, hybrid funds, equity funds, live nav, invest in mutual funds, wealth acumen'
   }
 };
 

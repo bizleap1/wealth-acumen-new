@@ -32,6 +32,7 @@ const Footer = () => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/careers">Careers</Link></li>
               <li><Link to="/sip-calculator">SIP Calculator</Link></li>
               <li><Link to="/asset-allocation-calculator">Asset Allocation</Link></li>
               <li><Link to="/mock-tests">Mock Tests</Link></li>
@@ -54,6 +55,7 @@ const Footer = () => {
               <li><Link to="/fixed-deposit">Fixed Deposit</Link></li>
               <li><Link to="/sif">SIF</Link></li>
               <li><Link to="/pms">PMS (Portfolio Management Service)</Link></li>
+              <li><Link to="/aif">AIF (Alternative Investment Fund)</Link></li>
               <li><Link to="/investment-resources">Investment Resources</Link></li>
             </ul>
           </div>

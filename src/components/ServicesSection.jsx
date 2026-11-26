@@ -58,6 +58,12 @@ const services = [
     path: "/sif",
     description: "Specialized Investment Fund offering advanced investment strategies for experienced investors.",
     icon: Award
+  },
+  {
+    title: "AIF (Alternative Investment Fund)",
+    path: "/aif",
+    description: "Exclusive pooled investment vehicle for HNIs with ₹1 Crore minimum ticket into private equity, private debt, and hedge strategies.",
+    icon: Award
   }
 ];
 

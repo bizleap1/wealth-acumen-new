@@ -20,6 +20,7 @@ const Bonds = lazy(() => import('./pages/Bonds'));
 const FixedDeposit = lazy(() => import('./pages/FixedDeposit'));
 const SIF = lazy(() => import('./pages/SIF'));
 const PMS = lazy(() => import('./pages/PMS'));
+const AIF = lazy(() => import('./pages/AIF'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const Downloads = lazy(() => import('./pages/Downloads'));
@@ -36,6 +37,8 @@ const TestInstructions = lazy(() => import('./pages/TestInstructions'));
 const ExaminationPortal = lazy(() => import('./pages/ExaminationPortal'));
 const TestResult = lazy(() => import('./pages/TestResult'));
 const AnswerReview = lazy(() => import('./pages/AnswerReview'));
+const Careers = lazy(() => import('./pages/Careers'));
+const QuickInvest = lazy(() => import('./pages/QuickInvest'));
 
 const PageLoader = () => (
   <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -73,6 +76,7 @@ function App() {
             <Route path="/fixed-deposit" element={<FixedDeposit />} />
             <Route path="/sif" element={<SIF />} />
             <Route path="/pms" element={<PMS />} />
+            <Route path="/aif" element={<AIF />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/downloads" element={<Downloads />} />
@@ -90,6 +94,10 @@ function App() {
             <Route path="/mock-tests/:testId/exam" element={<ExaminationPortal />} />
             <Route path="/mock-tests/:testId/result" element={<TestResult />} />
             <Route path="/mock-tests/:testId/review" element={<AnswerReview />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/career" element={<Careers />} />
+            <Route path="/quick-invest" element={<QuickInvest />} />
+            <Route path="/quickinvest" element={<QuickInvest />} />
             <Route path="*" element={<div style={{ padding: '100px', textAlign: 'center', fontSize: '2rem' }}>404 - Page Not Found. Current URL doesn't match any routes.</div>} />
           </Routes>
         </Suspense>
