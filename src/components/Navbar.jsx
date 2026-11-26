@@ -30,9 +30,11 @@ const Navbar = () => {
     }
   };
   
+  const isExamScreen = location.pathname.includes('/mock-tests/') && location.pathname.endsWith('/exam');
+  if (isExamScreen) return null;
+
   const darkHeaderPaths = ['/', '/contact', '/services'];
   const isDarkHeader = darkHeaderPaths.includes(location.pathname) && !scrolled;
-  const isHome = location.pathname === '/';
 
   const headerClass = isDarkHeader ? 'transparent-dark' : 'solid-light';
   const navClass = isDarkHeader ? 'dark-theme' : 'light-theme';
@@ -57,9 +59,9 @@ const Navbar = () => {
             <li className={`nav-item has-dropdown ${openDropdown === 'about' ? 'open' : ''}`}>
               <Link to="/about" onClick={(e) => toggleDropdown(e, 'about')}>About Us <span className="dropdown-icon"><ChevronDown size={14}/></span></Link>
               <div className="dropdown-menu">
-                <Link to="/about">About Us</Link>
-                <Link to="/faqs">FAQs</Link>
-                <Link to="/diy">DIY (Do It Yourself)</Link>
+                <Link to="/about" onClick={closeMenu}>About Us</Link>
+                <Link to="/faqs" onClick={closeMenu}>FAQs</Link>
+                <Link to="/diy" onClick={closeMenu}>DIY (Do It Yourself)</Link>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'services' ? 'open' : ''}`}>
@@ -67,18 +69,28 @@ const Navbar = () => {
               <div className="dropdown-menu">
                 <Link to="/equity" onClick={closeMenu}>Equity</Link>
                 <Link to="/mutual-funds" onClick={closeMenu}>Mutual Funds</Link>
+                <Link to="/mutual-fund-planner" onClick={closeMenu}>Mutual Fund & Portfolio Planner</Link>
                 <Link to="/insurance" onClick={closeMenu}>Insurance</Link>
                 <Link to="/etfs" onClick={closeMenu}>ETFs (Exchange Traded Funds)</Link>
                 <Link to="/bonds" onClick={closeMenu}>Bonds</Link>
                 <Link to="/fixed-deposit" onClick={closeMenu}>Fixed Deposit</Link>
                 <Link to="/sif" onClick={closeMenu}>SIF</Link>
                 <Link to="/pms" onClick={closeMenu}>PMS (Portfolio Management Service)</Link>
+                <Link to="/investment-resources" onClick={closeMenu}>Investment Resources</Link>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'learning' ? 'open' : ''}`}>
               <a href="#" onClick={(e) => toggleDropdown(e, 'learning')}>Learning <span className="dropdown-icon"><ChevronDown size={14}/></span></a>
               <div className="dropdown-menu">
-                <Link to="/e-book">E-Book</Link>
+                <Link to="/sip-calculator" onClick={closeMenu}>SIP Calculator</Link>
+                <Link to="/asset-allocation-calculator" onClick={closeMenu}>Asset Allocation Calculator</Link>
+                <Link to="/e-book" onClick={closeMenu}>E-Book</Link>
+              </div>
+            </li>
+            <li className={`nav-item has-dropdown ${openDropdown === 'examination' ? 'open' : ''}`}>
+              <a href="#" onClick={(e) => toggleDropdown(e, 'examination')}>Examination <span className="dropdown-icon"><ChevronDown size={14}/></span></a>
+              <div className="dropdown-menu">
+                <Link to="/mock-tests" onClick={closeMenu}>Mock Tests</Link>
               </div>
             </li>
             <li className={`nav-item has-dropdown ${openDropdown === 'downloads' ? 'open' : ''}`}>

@@ -1,0 +1,419 @@
+/* Mutual Fund Portfolio Planner Page Styles */
+
+.mf-planner-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.mf-planner-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 24px 0;
+}
+
+/* Tabs Bar */
+.planner-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  overflow-x: auto;
+}
+
+.planner-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.planner-tab-btn:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.planner-tab-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.tab-counter-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.planner-tab-btn:not(.active) .tab-counter-badge {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Tab Content View */
+.tab-content-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Search Card */
+.explorer-search-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.search-card-header {
+  margin-bottom: 18px;
+}
+
+.search-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.search-card-header p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Scheme Overview Card */
+.scheme-overview-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.scheme-overview-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.scheme-title-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.scheme-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.tag-fund-house {
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.tag-category {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.tag-type {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.tag-plan {
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.tag-option {
+  background: #fffbeb;
+  color: #b45309;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.scheme-name-text {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.scheme-code-text {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* NAV Highlight Box */
+.scheme-nav-highlight-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.nav-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 240px;
+}
+
+.nav-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.nav-val-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.nav-big-val {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.btn-refresh-nav {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 6px;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-refresh-nav:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.btn-refresh-nav.spinning svg {
+  animation: spin 1s linear infinite;
+}
+
+.nav-date-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.scheme-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.compare-btn {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.compare-btn:hover {
+  background: #dbeafe;
+}
+
+.compare-btn.added {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+.portfolio-btn {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.portfolio-btn:hover {
+  background: #2563eb;
+}
+
+/* Returns Metric Strip */
+.scheme-returns-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.return-stat-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stat-val.pos {
+  color: #059669;
+}
+
+.stat-val.neg {
+  color: #dc2626;
+}
+
+.stat-val.neutral-val {
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.stat-note {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Loading & Error States */
+.loading-state-card,
+.error-state-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 48px;
+  text-align: center;
+}
+
+.loading-spinner-ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.err-icon {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+.retry-btn {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .scheme-overview-top {
+    flex-direction: column;
+  }
+
+  .scheme-nav-highlight-col {
+    align-items: stretch;
+  }
+
+  .scheme-returns-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .mf-planner-container {
+    padding: 20px 16px 0;
+  }
+
+  .scheme-returns-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .scheme-quick-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,7 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './WhatsAppWidget.css';
 
 const WhatsAppWidget = () => {
+  const location = useLocation();
+  if (location.pathname.includes('/mock-tests/') && location.pathname.endsWith('/exam')) {
+    return null;
+  }
   // Use a default phone number or leave it placeholder for the user to update
   const phoneNumber = "919325227357"; 
   const message = "Hello! I would like to know more about Wealth Acumen's services.";

@@ -1,10 +1,14 @@
 import React from 'react';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoImage from '../assets/image copy 3.png';
 import './Footer.css';
 
 const Footer = () => {
+  const location = useLocation();
+  if (location.pathname.includes('/mock-tests/') && location.pathname.endsWith('/exam')) {
+    return null;
+  }
   return (
     <footer className="site-footer">
       <div className="footer-container">
@@ -25,6 +29,9 @@ const Footer = () => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/sip-calculator">SIP Calculator</Link></li>
+              <li><Link to="/asset-allocation-calculator">Asset Allocation</Link></li>
+              <li><Link to="/mock-tests">Mock Tests</Link></li>
               <li><Link to="/downloads">Downloads</Link></li>
               <li><Link to="/faqs">FAQs</Link></li>
               <li><Link to="/contact">Contact</Link></li>
@@ -37,12 +44,14 @@ const Footer = () => {
             <ul>
               <li><Link to="/equity">Equity</Link></li>
               <li><Link to="/mutual-funds">Mutual Funds</Link></li>
+              <li><Link to="/mutual-fund-planner">Portfolio Planner</Link></li>
               <li><Link to="/insurance">Insurance</Link></li>
               <li><Link to="/etfs">ETFs (Exchange Traded Funds)</Link></li>
               <li><Link to="/bonds">Bonds</Link></li>
               <li><Link to="/fixed-deposit">Fixed Deposit</Link></li>
               <li><Link to="/sif">SIF</Link></li>
               <li><Link to="/pms">PMS (Portfolio Management Service)</Link></li>
+              <li><Link to="/investment-resources">Investment Resources</Link></li>
             </ul>
           </div>
 
@@ -55,7 +64,7 @@ const Footer = () => {
               <p>Ground Floor, Empress Mahal, Plot No. 170,<br/>near Dadar TT Circle, Dadar East, Mumbai, Maharashtra 400014</p>
             </div>
             <div className="social-icons-bottom">
-              <a href="https://www.instagram.com/wealthacumen31?igsh=MWIzcHpzbWt4ZDByMQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram"><FaInstagram size={18} /></a>
+              <a href="https://www.instagram.com/wealth__acumen/?hl=en" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram"><FaInstagram size={18} /></a>
               <a href="https://wa.me/919325227357" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="WhatsApp"><FaWhatsapp size={18} /></a>
             </div>
           </div>

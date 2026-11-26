@@ -26,6 +26,17 @@ const Downloads = lazy(() => import('./pages/Downloads'));
 const EBook = lazy(() => import('./pages/EBook'));
 const Services = lazy(() => import('./pages/Services'));
 
+// New Interactive Calculators, Examination Portal & Mutual Fund Planner
+const SipCalculator = lazy(() => import('./pages/SipCalculator'));
+const AssetAllocationCalculator = lazy(() => import('./pages/AssetAllocationCalculator'));
+const InvestmentResources = lazy(() => import('./pages/InvestmentResources'));
+const MutualFundPlanner = lazy(() => import('./pages/MutualFundPlanner'));
+const MockTests = lazy(() => import('./pages/MockTests'));
+const TestInstructions = lazy(() => import('./pages/TestInstructions'));
+const ExaminationPortal = lazy(() => import('./pages/ExaminationPortal'));
+const TestResult = lazy(() => import('./pages/TestResult'));
+const AnswerReview = lazy(() => import('./pages/AnswerReview'));
+
 const PageLoader = () => (
   <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <div style={{
@@ -66,6 +77,19 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/e-book" element={<EBook />} />
+            <Route path="/sip-calculator" element={<SipCalculator />} />
+            <Route path="/calculator" element={<SipCalculator />} />
+            <Route path="/asset-allocation-calculator" element={<AssetAllocationCalculator />} />
+            <Route path="/asset-allocation" element={<AssetAllocationCalculator />} />
+            <Route path="/investment-resources" element={<InvestmentResources />} />
+            <Route path="/resources" element={<InvestmentResources />} />
+            <Route path="/mutual-fund-planner" element={<MutualFundPlanner />} />
+            <Route path="/portfolio-planner" element={<MutualFundPlanner />} />
+            <Route path="/mock-tests" element={<MockTests />} />
+            <Route path="/mock-tests/:testId/instructions" element={<TestInstructions />} />
+            <Route path="/mock-tests/:testId/exam" element={<ExaminationPortal />} />
+            <Route path="/mock-tests/:testId/result" element={<TestResult />} />
+            <Route path="/mock-tests/:testId/review" element={<AnswerReview />} />
             <Route path="*" element={<div style={{ padding: '100px', textAlign: 'center', fontSize: '2rem' }}>404 - Page Not Found. Current URL doesn't match any routes.</div>} />
           </Routes>
         </Suspense>
