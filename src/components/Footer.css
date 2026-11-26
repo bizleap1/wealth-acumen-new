@@ -70,13 +70,20 @@
   text-align: left;
 }
 
+.registration-info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .registration-info p {
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
   color: #94a3b8;
   margin: 0;
-  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
 /* Links & Services */

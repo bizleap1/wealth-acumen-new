@@ -20,7 +20,10 @@ const Footer = () => {
               <img src={logoImage} alt="Wealth Acumen Logo" className="footer-logo-img" style={{ objectFit: 'contain', borderRadius: '4px' }} />
               <span className="logo-text-large" style={{ letterSpacing: '2px' }}>WEALTH ACUMEN</span>
             </Link>
-
+            <div className="registration-info">
+              <p>ARN - 247468 (Mutual Fund)</p>
+              <p>APRN10591 (PMS)</p>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}
